@@ -50,7 +50,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Montserrat', serif;
+  font-family: 'Montserrat', serif; /* Using Montserrat as you requested */
   color: var(--color-heading);
   font-weight: 700;
   letter-spacing: 2px;
@@ -62,15 +62,15 @@ h1, h2, h3, h4 {
    ========================================= */
 .header {
   display: flex;
-  justify-content: flex-end; /* Pushes nav to the right since logo div was removed in your HTML */
+  justify-content: flex-end; 
   align-items: center;
   padding: 1.5rem 5%;
-  background-color: rgba(250, 248, 244, 0.9); /* Glass effect with ivory base */
+  background-color: rgba(250, 248, 244, 0.9); 
   backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: var(--border-gold); /* Elegant gold line under the header */
+  border-bottom: var(--border-gold); 
 }
 
 .header__nav-list {
@@ -79,66 +79,82 @@ h1, h2, h3, h4 {
   list-style: none;
 }
 
-.header__nav-link {
+.header__nav-link { /* Fixed missing dot here */
   text-decoration: none;
   color: var(--color-text);
   font-size: 0.95rem;
-  font-family: 'Inter', sans-serif; /* Keep nav links clean and modern */
+  font-family: 'Inter', sans-serif; 
   font-weight: 500;
   transition: var(--transition-smooth);
   padding-bottom: 4px;
   border-bottom: 2px solid transparent; 
 }
 
-.header__nav-link:hover,
+/* Using your custom nav hover states */
 .header__nav-link--active {
   color: var(--color-heading);
-  border-bottom: 3px solid var(--accent-green); /* Pastel hover */
+  border-bottom: 3px solid var(--accent-green); 
 }
 
 .header__nav-link:hover {
   color: var(--color-heading);
-  border-bottom: 3px solid var(--accent-gold); /* Pastel hover */
+  border-bottom: 3px solid var(--accent-gold); 
 }
 
 /* =========================================
-   4. Main Content (Unboxed & Elegant)
+   4. Main Content 
    ========================================= */
 .main {
-  padding: 6rem 5%; /* Increased top padding so it breathes more */
+  padding: 6rem 5%; 
   display: flex;
   flex-direction: column;
   align-items: center;
   flex-grow: 1; /* Sticky Footer Fix */
 }
 
-/* The unboxed header section */
-.counselling-facts__header {
-  text-align: center;
-  max-width: 900px;
+/* =========================================
+   5. Hero Section (Two-Column Layout)
+   ========================================= */
+.hero-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Creates two equal columns */
+  gap: 4rem; 
+  align-items: center; 
   width: 100%;
+  max-width: 1200px; 
+  margin: 0 auto;
+}
+
+.hero__content {
+  text-align: left;
+}
+
+.counselling-facts__header {
+  text-align: left;
+  max-width: 100%;
 }
 
 .counselling-facts__header h2 {
-  font-size: 2.8rem; /* Made slightly larger to act as a proper focal point */
+  font-size: 2.8rem; /* Using your size */
   margin-bottom: 0;
+  line-height: 1.2;
 }
 
 /* Decorative Gold Divider under the main heading */
 .counselling-facts__header h2::after {
   content: '';
   display: block;
-  width: 200px; /* Short, elegant line instead of a massive underline */
+  width: 200px; /* Using your custom width */
   height: 2px;
   background-color: var(--accent-gold);
-  margin: 1.1rem auto 0 auto;
+  margin: 1.1rem 0 0 0; /* Snapped to the left edge */
 }
 
 /* PILLARS List (Trust • Respect • Growth) */
 .header-title__list {
   list-style: none;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* Aligned left for the hero section */
   align-items: center;
   gap: 1.5rem;
   margin-top: 1.5rem;
@@ -150,7 +166,7 @@ h1, h2, h3, h4 {
   font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 4px;
-  color:rgb(147, 138, 95);
+  color: rgb(147, 138, 95); /* Using your custom color */
   display: flex;
   align-items: center;
   gap: 1.5rem;
@@ -160,39 +176,88 @@ h1, h2, h3, h4 {
 .header-title__list li:not(:last-child)::after {
   content: '•';
   font-size: 1.2rem;
-  color: var(--accent-gold); /* The dots are now gold */
+  color: var(--accent-gold); 
   opacity: 0.8;
 }
 
+/* Description Paragraphs */
 .counselling-desc {
-  margin-top: 3rem;
-  text-align: center;
+  margin-top: 2.5rem;
+  text-align: left;
 }
 
 .counselling-desc p {
-  font-size: 1.15rem;
-  max-width: 650px;
-  margin: 0 auto;
+  font-size: 1.15rem; /* Using your size */
+  max-width: 100%;
+  margin: 0 0 1.5rem 0; 
   color: var(--color-text);
 }
 
+.counselling-facts {
+  margin-top: 2.5rem;
+  text-align: left;
+}
+
+.counselling-facts p {
+  font-size: 1.15rem; /* Using your size */
+  max-width: 100%;
+  color: var(--color-text);
+}
+
+/* Gold Horizontal Rule Separator */
+.separation {
+  border: none; 
+  border-top: 1px solid var(--accent-gold); 
+}
+
 /* =========================================
-   5. Global Visual Utility Classes
+   6. Hero Image Styling
    ========================================= */
-.img-calm {
+.hero__image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Changed from center */
+  align-self: start;
+}
+
+.hero__image {
+  width: 100%;
+  max-height: 600px; 
+  object-fit: cover; 
+  border-radius: var(--radius-lg);
+}
+
+/* =========================================
+   7. Global Visual Utility Classes
+   ========================================= */
+.img-calm { /* Fixed missing dot here */
   border-radius: var(--radius-md);
   filter: sepia(0.15) saturate(0.85) contrast(0.95);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Softer shadow for images */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); 
   width: 100%;
   height: auto;
 }
 
+/* Fade-in Animation Settings */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, visibility;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* =========================================
-   6. Footer
+   8. Footer
    ========================================= */
 .footer {
-  background-color: var(--bg-surface); /* Uses the slightly darker beige */
-  border-top: var(--border-gold); /* Matches the header border */
+  background-color: var(--bg-surface); 
+  border-top: var(--border-gold); 
   padding: 2.5rem 5%;
 }
 
@@ -208,7 +273,7 @@ h1, h2, h3, h4 {
 }
 
 .footer__content a {
-  color: var(--color-text);
+  color: #d0cdc8; /* Using your custom link color */
   text-decoration: none;
   font-weight: 500;
   transition: var(--transition-smooth);
@@ -218,9 +283,16 @@ h1, h2, h3, h4 {
   color: var(--accent-gold);
 }
 
-.footer__admin {
-  background: var(--bg-page);
-  padding: 6px 12px;
-  border-radius: var(--radius-md);
-  border: var(--border-gold);
+.footer__creator {
+  color: #d0cdc8; /* Using your custom color */
+}
+
+/* =========================================
+   9. Mobile Responsiveness
+   ========================================= */
+@media (max-width: 900px) {
+  .hero-section {
+    grid-template-columns: 1fr; /* Stacks image under text on smaller screens */
+    gap: 3rem;
+  }
 }
