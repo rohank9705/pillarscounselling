@@ -1,0 +1,226 @@
+/* =========================================
+   1. CSS Variables (Premium Beige & Gold)
+   ========================================= */
+:root {
+  /* Core Canvas Colors */
+  --bg-page: #f9f4e9;         /* A very soft, warm beige/ivory */
+  --bg-surface: #F2EFE8;      /* Slightly deeper beige for header/footer contrast */
+  
+  /* Typography Colors */
+  --color-text: #54504A;      /* Warm charcoal for highly readable body text */
+  --color-heading: #2D2A26;   /* Rich, dark espresso for headings (Premium feel) */
+  
+  /* The Gold & Pastels */
+  --accent-gold: #cfb160;     /* Muted, elegant champagne gold */
+  --accent-blue: #7FB3D5;     /* Maintained pastel blue */
+  --accent-rose: #E2A6A6;     /* Maintained pastel rose */
+  --accent-green: #AEC6A6;    /* Maintained pastel green */
+  
+  /* Structural Variables */
+  --radius-lg: 24px;          
+  --radius-md: 12px;
+  
+  /* Premium Borders */
+  --border-gold: 1px solid rgba(163, 134, 54, 0.519); /* Soft gold border */
+  
+  /* Transitions */
+  --transition-smooth: all 0.3s ease-in-out;
+}
+
+/* =========================================
+   2. Resets & Typography
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lora', serif;
+  background-color: var(--bg-page);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  
+  /* Sticky Footer Fix */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', serif;
+  color: var(--color-heading);
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+/* =========================================
+   3. Header & Navigation
+   ========================================= */
+.header {
+  display: flex;
+  justify-content: flex-end; /* Pushes nav to the right since logo div was removed in your HTML */
+  align-items: center;
+  padding: 1.5rem 5%;
+  background-color: rgba(250, 248, 244, 0.9); /* Glass effect with ivory base */
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: var(--border-gold); /* Elegant gold line under the header */
+}
+
+.header__nav-list {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.header__nav-link {
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif; /* Keep nav links clean and modern */
+  font-weight: 500;
+  transition: var(--transition-smooth);
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent; 
+}
+
+.header__nav-link:hover,
+.header__nav-link--active {
+  color: var(--color-heading);
+  border-bottom: 3px solid var(--accent-green); /* Pastel hover */
+}
+
+.header__nav-link:hover {
+  color: var(--color-heading);
+  border-bottom: 3px solid var(--accent-gold); /* Pastel hover */
+}
+
+/* =========================================
+   4. Main Content (Unboxed & Elegant)
+   ========================================= */
+.main {
+  padding: 6rem 5%; /* Increased top padding so it breathes more */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1; /* Sticky Footer Fix */
+}
+
+/* The unboxed header section */
+.counselling-facts__header {
+  text-align: center;
+  max-width: 900px;
+  width: 100%;
+}
+
+.counselling-facts__header h2 {
+  font-size: 2.8rem; /* Made slightly larger to act as a proper focal point */
+  margin-bottom: 0;
+}
+
+/* Decorative Gold Divider under the main heading */
+.counselling-facts__header h2::after {
+  content: '';
+  display: block;
+  width: 200px; /* Short, elegant line instead of a massive underline */
+  height: 2px;
+  background-color: var(--accent-gold);
+  margin: 1.1rem auto 0 auto;
+}
+
+/* PILLARS List (Trust • Respect • Growth) */
+.header-title__list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  padding: 0;
+}
+
+.header-title__list li {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 4px;
+  color:rgb(147, 138, 95);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  opacity: 0.7;
+}
+
+.header-title__list li:not(:last-child)::after {
+  content: '•';
+  font-size: 1.2rem;
+  color: var(--accent-gold); /* The dots are now gold */
+  opacity: 0.8;
+}
+
+.counselling-desc {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.counselling-desc p {
+  font-size: 1.15rem;
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--color-text);
+}
+
+/* =========================================
+   5. Global Visual Utility Classes
+   ========================================= */
+.img-calm {
+  border-radius: var(--radius-md);
+  filter: sepia(0.15) saturate(0.85) contrast(0.95);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Softer shadow for images */
+  width: 100%;
+  height: auto;
+}
+
+/* =========================================
+   6. Footer
+   ========================================= */
+.footer {
+  background-color: var(--bg-surface); /* Uses the slightly darker beige */
+  border-top: var(--border-gold); /* Matches the header border */
+  padding: 2.5rem 5%;
+}
+
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: var(--color-text);
+}
+
+.footer__content a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition-smooth);
+}
+
+.footer__content a:hover {
+  color: var(--accent-gold);
+}
+
+.footer__admin {
+  background: var(--bg-page);
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  border: var(--border-gold);
+}
