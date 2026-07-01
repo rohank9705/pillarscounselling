@@ -7,43 +7,162 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" /><link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;700;800&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="icon"
+      type="image/png"
+      href="images/Untitled_design-removebg-preview.png"
+    />
   </head>
 
   <body>
     <header class="header">
-      
-        <nav class="header__nav">
-          <ul class="header__nav-list">
-            <li class="header__nav-item">
-              <a
-                href="index.html"
-                class="header__nav-link header__nav-link--active"
-                >HOME</a
-              >
-            </li>
-            <li class="header__nav-item">
-              <a href="aboutme.html" class="header__nav-link">ABOUT ME</a>
-            </li>
-            <li class="header__nav-item">
-              <a href="contact.html" class="header__nav-link">CONTACT</a>
-            </li>
-            <li class="header__nav-item">
-              <a href="services.html" class="header__nav-link">OUR SERVICES</a>
-            </li>
-          </ul>
-        </nav>
+      <div class="header__logo">
+        <a href="index.html">
+          <img
+            src="images/Untitled_design-removebg-preview.png"
+            alt="Pillars Counselling Services Logo"
+            class="header__logo-img"
+          />
+        </a>
+      </div>
+
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a href="index.html" class="header__nav-link">HOME</a>
+          </li>
+          <li class="header__nav-item">
+            <a
+              href="aboutme.html"
+              class="header__nav-link header__nav-link--active"
+              >ABOUT ME</a
+            >
+          </li>
+          <li class="header__nav-item">
+            <a href="contact.html" class="header__nav-link">CONTACT</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="services.html" class="header__nav-link">OUR SERVICES</a>
+          </li>
+        </ul>
+      </nav>
     </header>
 
+    <section class="main">
+      <!-- Biography Section -->
+      <section class="hero-section fade-in">
+        <!-- LEFT COLUMN: Image -->
+        <div class="hero__image-wrapper">
+          <!-- Swap this src for a portrait of the client or a calming aesthetic image -->
+          <img
+            src="images/counsellor-portrait.png"
+            alt="Portrait of the Counsellor"
+            class="hero__image"
+          />
+        </div>
 
+        <!-- RIGHT COLUMN: Text -->
+        <div class="hero__content">
+          <h2>About Me</h2>
+          <hr class="separation" />
+          <h3>
+            Creating a safe, non-judgmental space for your healing journey.
+          </h3>
+          <hr class="separation" />
+          <p>
+            Hello, and welcome. I am a compassionate, client-focused Cognitive
+            Behavioural Therapist dedicated to supporting individuals through
+            anxiety, depression, stress, and low self-esteem. My practice is
+            built on providing a safe, collaborative, and deeply inclusive
+            environment. I have extensive experience working with a wonderfully
+            diverse range of clients—including neurodivergent individuals,
+            veterans, and professionals from various cultural backgrounds.
+            Specialising in structured, evidence-based CBT, we will work
+            together to set clear, achievable goals tailored to your unique
+            needs. Whether we are utilising practical tools like cognitive
+            restructuring and behavioural activation, or developing safe coping
+            strategies for moments of crisis, my aim is to equip you with the
+            skills you need for lasting emotional resilience. Backed by rigorous
+            training in safeguarding, I am here to provide a secure space where
+            you can safely explore your challenges and achieve meaningful,
+            positive change.
+          </p>
+        </div>
+      </section>
+
+      <!-- Qualifications Section -->
+      <section class="qualifications-section fade-in">
+        <div class="qualifications-box">
+          <h3>Training & Core Competencies</h3>
+          <ul class="qualifications-list">
+            <li>
+              Specialized Support for Anxiety, Depression, Stress & Self-Esteem
+            </li>
+            <li>
+              Evidence-Based CBT Techniques (Cognitive Restructuring,
+              Behavioural Activation & Exposure)
+            </li>
+            <li>Inclusive Therapy for Diverse & Neurodivergent Populations</li>
+            <li>ASIST Suicide Prevention & Crisis Safety Planning</li>
+            <li>Rigorous Safeguarding, Confidentiality & Ethical Practice</li>
+          </ul>
+        </div>
+      </section>
+    </section>
     <footer class="footer">
-      <div class="footer__content">
-        <p>&copy; 2026 COMPANY NAME. All rights reserved.</p>
+      <div class="footer__top">
+        <!-- Column 1: Navigation -->
+        <div class="footer__column">
+          <h4>Quick Links</h4>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 2: Crisis Support -->
+        <div class="footer__column">
+          <h4>Need Immediate Help?</h4>
+          <p>
+            If you are in crisis or need urgent support, please reach out to
+            emergency services or a dedicated helpline:
+          </p>
+          <ul class="footer__crisis-list">
+            <li><strong>Emergency:</strong> Call 999</li>
+            <li><strong>NHS 24:</strong> Call 111</li>
+            <li><strong>Samaritans:</strong> Call 116 123</li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Trust Badge -->
+        <div class="footer__column">
+          <h4>Professional Affiliation</h4>
+          <div class="footer__badge">
+            <p>
+              Registered Member of the British Association for Counselling and
+              Psychotherapy (BACP)
+            </p>
+            <!-- You can drop a small BACP logo image right here later! -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar: Copyright & Credit -->
+      <div class="footer__bottom">
+        <p>&copy; 2026 Pillars Counselling Services. All rights reserved.</p>
 
         <div class="footer__creator">
           Designed & Developed by
@@ -54,9 +173,8 @@
             >Rohan</a
           >
         </div>
-        
       </div>
     </footer>
-
+    <script src="app.js"></script>
   </body>
 </html>

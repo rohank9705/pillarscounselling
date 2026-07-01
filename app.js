@@ -23,3 +23,39 @@ const appearOnScroll = new IntersectionObserver(function(entries, observer) {
 faders.forEach(fader => {
   appearOnScroll.observe(fader);
 });
+
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault(); // Stops the page from reloading
+
+    // Gather the data from the inputs
+    const formData = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      service: document.getElementById('service').value
+    };
+
+    try {
+      // Send the data to your Node server
+      const response = await fetch('http://localhost:3000/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        alert('Message sent successfully! We will be in touch soon.');
+        contactForm.reset(); // Clears the form fields
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Failed to send message. Make sure the server is running!');
+    }
+  });
+}

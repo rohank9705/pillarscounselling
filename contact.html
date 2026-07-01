@@ -7,56 +7,208 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" /><link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" type="image/png" href="images/Untitled_design-removebg-preview.png">
+
   </head>
 
   <body>
     <header class="header">
-      
-        <nav class="header__nav">
-          <ul class="header__nav-list">
-            <li class="header__nav-item">
-              <a
-                href="index.html"
-                class="header__nav-link header__nav-link--active"
-                >HOME</a
-              >
-            </li>
-            <li class="header__nav-item">
-              <a href="aboutme.html" class="header__nav-link">ABOUT ME</a>
-            </li>
-            <li class="header__nav-item">
-              <a href="contact.html" class="header__nav-link">CONTACT</a>
-            </li>
-            <li class="header__nav-item">
-              <a href="services.html" class="header__nav-link">OUR SERVICES</a>
-            </li>
-          </ul>
-        </nav>
+      <div class="header__logo">
+        <a href="index.html">
+          <img
+            src="images/Untitled_design-removebg-preview.png"
+            alt="Pillars Counselling Services Logo"
+            class="header__logo-img"
+          />
+        </a>
+      </div>
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a href="index.html" class="header__nav-link">HOME</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="aboutme.html" class="header__nav-link">ABOUT ME</a>
+          </li>
+          <li class="header__nav-item">
+            <a
+              href="contact.html"
+              class="header__nav-link header__nav-link--active"
+              >CONTACT</a
+            >
+          </li>
+          <li class="header__nav-item">
+            <a href="services.html" class="header__nav-link">OUR SERVICES</a>
+          </li>
+        </ul>
+      </nav>
     </header>
 
+    <main class="main">
 
-    <footer class="footer">
-      <div class="footer__content">
-        <p>&copy; 2026 COMPANY NAME. All rights reserved.</p>
-
-        <div class="footer__creator">
-          Designed & Developed by
-          <a
-            href="https://github.com/rohank9705"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Rohan</a
-          >
+      <section class="fade-in">
+        <div>
+          <h1>CONTACT US</h1>
         </div>
-        
-      </div>
-    </footer>
+      </section>
+      <section class="hero-section">
+        <div class="hero-content">
+          <form id="contactForm" class="contact-form fade-in">
+            <h2>GET IN TOUCH</h2>
+            <hr class="separation" />
 
+            <h3>
+              Fill out our contact form below to ping me an email. All enquiries
+              will be responded to within 72 hours. I look forward to hearing
+              from you!
+            </h3>
+            <div class="contact-form__group">
+              <label for="name" class="contact-form__label">Full Name</label>
+              <input
+                type="text"
+                id="name"
+                required
+                class="contact-form__input"
+                placeholder="e.g. John Doe"
+              />
+            </div>
+
+            <div class="contact-form__group">
+              <label for="email" class="contact-form__label"
+                >Email Address</label
+              >
+              <input
+                type="email"
+                id="email"
+                required
+                class="contact-form__input"
+                placeholder="e.g. john@example.com"
+              />
+            </div>
+
+            <div class="contact-form__group">
+              <label for="message" class="contact-form__label"
+                >How can we help?</label
+              >
+              <select id="service" required class="contact-form__input">
+                <option value="" disabled selected>How can we help?</option>
+                <option value="service1">have one service written here</option>
+                <option value="service2">another here</option>
+              </select>
+            </div>
+            <button type="submit" class="contact-form__submit">
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        <div class="hero-image fade-in">
+          <img
+            src="images/plant2.jpg"
+            alt="Calming therapy space"
+            class="img-calm hero__image"
+          />
+        </div>
+      </section>
+      <!-- Additional Contact Information Grid -->
+      <section class="contact-extras fade-in">
+        <div class="contact-grid">
+          <!-- Card 1: Direct Contact -->
+          <div class="contact-card">
+            <h4>Direct Contact</h4>
+            <p>
+              <strong>Email:</strong><br />
+              <a href="mailto:email@example.com">email@example.com</a>
+            </p>
+            <p>
+              <strong>Phone:</strong><br />
+              <a href="tel:+447368966534">07495 321117</a>
+            </p>
+          </div>
+
+          <!-- Card 2: Location & Hours -->
+          <div class="contact-card">
+            <h4>Location & Hours</h4>
+            <p>
+              <strong>Clinic Address:</strong><br />
+              <a
+                href="https://www.google.com/maps/place/54+Fruin+Ave,+Newton+Mearns,+Glasgow+G77+6JA/data=!4m2!3m1!1s0x488847e2b7d73867:0xec4c9f2736830bd7?sa=X&ved=1t:242&ictx=111"
+              >Address here (example link)</a
+              ><br />Glasgow, G1 1AA
+            </p>
+            <p>
+              <strong>Operating Hours:</strong><br />
+              Mon - Fri: 9:00 AM - 6:00 PM
+            </p>
+          </div>
+
+          <!-- Card 3: What to Expect -->
+          <div class="contact-card">
+            <h4>What to Expect</h4>
+            <p>
+              Taking the first step can feel daunting. Once you submit a form,
+              we will reach out within 72 hours to schedule a free 15-minute
+              introductory call to ensure we are the right fit for your journey.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+  <div class="footer__top">
+    <!-- Column 1: Navigation -->
+    <div class="footer__column">
+      <h4>Quick Links</h4>
+      <ul class="footer__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="services.html">Our Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 2: Crisis Support -->
+    <div class="footer__column">
+      <h4>Need Immediate Help?</h4>
+      <p>If you are in crisis or need urgent support, please reach out to emergency services or a dedicated helpline:</p>
+      <ul class="footer__crisis-list">
+        <li><strong>Emergency:</strong> Call 999</li>
+        <li><strong>NHS 24:</strong> Call 111</li>
+        <li><strong>Samaritans:</strong> Call 116 123</li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Trust Badge -->
+    <div class="footer__column">
+      <h4>Professional Affiliation</h4>
+      <div class="footer__badge">
+        <p>Registered Member of the British Association for Counselling and Psychotherapy (BACP)</p>
+        <!-- You can drop a small BACP logo image right here later! -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar: Copyright & Credit -->
+  <div class="footer__bottom">
+    <p>&copy; 2026 Pillars Counselling Services. All rights reserved.</p>
+    
+    <div class="footer__creator">
+      Designed & Developed by 
+      <a href="https://github.com/rohank9705" target="_blank" rel="noopener noreferrer">Rohan</a>
+    </div>
+  </div>
+</footer>
+    <script src="app.js"></script>
   </body>
 </html>
