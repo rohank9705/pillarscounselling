@@ -7,7 +7,7 @@
   --bg-surface: #ffffff;      /* Slightly deeper beige for header/footer contrast */
   
   /* Typography Colors */
-  --color-text: #54504A;      /* Warm charcoal for highly readable body text */
+  --color-text: #726d65;      /* Warm charcoal for highly readable body text */
   --color-heading: #2D2A26;   /* Rich, dark espresso for headings (Premium feel) */
   
   /* The Gold & Pastels */
@@ -55,6 +55,7 @@ h1, h2, h4 {
   font-weight: 700;
   letter-spacing: 2px;
   margin-bottom: 1rem;
+  text-wrap: balance;
 }
 
 
@@ -73,6 +74,8 @@ h1, h2, h4 {
   z-index: 100;
   border-bottom: var(--border-gold); 
   box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur();
+  
 }
 
 .header__nav-list {
@@ -335,13 +338,15 @@ h1, h2, h4 {
 }
 
 .footer__column h4 {
-  font-family: 'Lora', serif;
+  font-family: 'Montserrat', serif;
+  text-transform: uppercase;
   font-size: 1.2rem;
   color: var(--color-heading);
   margin-bottom: 1.2rem;
 }
 
 .footer__column p {
+  font-family: 'Lora', serif;
   font-size: 0.95rem;
   line-height: 1.6;
   margin-bottom: 1rem;
@@ -350,6 +355,7 @@ h1, h2, h4 {
 /* Link Lists inside the columns */
 .footer__links,
 .footer__crisis-list {
+  font-family: 'Lora', serif;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -519,7 +525,7 @@ h1, h2, h4 {
 /* Elegant Sage Green Focus State */
 .contact-form__input:focus {
   border-color: var(--accent-green);
-  box-shadow: 0 0 0 4px rgba(174, 198, 166, 0.25); 
+  box-shadow: 0 0 0 4px rgba(174, 198, 166, 0.5); 
 }
 
 /* The Submit Button */
@@ -685,5 +691,161 @@ h1, h2, h4 {
   
   .qualifications-box h3 {
     font-size: 1.5rem;
+  }
+}
+
+/* =========================================
+   1. Nav Link Hover Animation (Expanding Underline)
+   ========================================= */
+.header__nav-list a {
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 4px;
+}
+
+.header__nav-list a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--accent-gold);
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+
+.header__nav-list a:hover::after,
+.header__nav-list a.header__nav-link--active::after {
+  width: 100%;
+}
+
+/* =========================================
+   2. Form Input Focus States (Soft Gold Glow)
+   ========================================= */
+/* Assuming your inputs, textareas, and selects share a class or are styled directly */
+input:focus, 
+textarea:focus, 
+select:focus {
+  outline: none;
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 4px rgba(163, 134, 54, 0.15); /* Creates a soft gold halo */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* =========================================
+   3. Button Hover State (Lift & Shadow)
+   ========================================= */
+/* Target your submit button (you may need to adjust the selector if you gave it a specific class) */
+button[type="submit"] {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  transform: translateY(-2px); /* Lifts the button up slightly */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* Adds a shadow underneath */
+  background-color: var(--accent-gold); /* Softens the dark button on hover */
+}
+
+/* =========================================
+   4. Scroll Fade-In Setup
+   ========================================= */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px); /* Starts slightly lower down the page */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* This class gets added by JavaScript when the element scrolls into view */
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
+   Custom Scrollbar
+   ========================================= */
+/* The width of the entire scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* The track (background) of the scrollbar */
+::-webkit-scrollbar-track {
+  background: var(--bg-surface); 
+}
+
+/* The draggable thumb */
+::-webkit-scrollbar-thumb {
+  background: rgba(163, 134, 54, 0.4); /* Faint gold */
+  border-radius: 10px;
+}
+
+/* The thumb when you hover/click it */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(163, 134, 54, 0.7); /* Darker gold */
+}
+
+
+/* =========================================
+   Subtle Image Hover Zoom (Ken Burns Effect)
+   ========================================= */
+
+/* 1. The "Picture Frame" that stops the image spilling out */
+.hero__image-wrapper {
+  overflow: hidden; 
+  /* If your image usually has rounded corners, you might need to add:
+     border-radius: var(--radius-lg); */
+}
+
+/* 2. The transition speed on the image itself */
+.hero__image {
+  transition: transform 1.2s ease; 
+  display: block; /* Removes any weird invisible space below the image */
+}
+
+/* 3. The actual zoom when you hover over the wrapper */
+.hero__image-wrapper:hover .hero__image {
+  transform: scale(1.04); 
+}
+
+/* =========================================
+   Mobile Layout Fixes (Screens under 768px)
+   ========================================= */
+@media (max-width: 768px) {
+  
+  /* 1. Global Safety Net: Forbids any sideways scrolling */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* 2. Header Fix: Stacks the logo and navigation neatly */
+  .header {
+    flex-direction: column; /* Stacks logo on top of links */
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  /* 3. Navigation Fix: Allows long links to wrap to a new line */
+  .header__nav-list {
+    flex-wrap: wrap; 
+    justify-content: center; /* Centers the links */
+    row-gap: 15px; /* Adds breathing room if links drop to a second line */
+    padding-left: 0;
+  }
+
+  /* 4. Layout Gap Fix: Adds breathing room between stacked sections on mobile */
+  .hero-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Creates a clean gap between the text and the image inside the section */
+    margin-bottom: 3rem; /* Creates a gap between the first block and the second block */
+  }
+
+  /* Add this inside your mobile media query! */
+  .hero-section:nth-child(even) {
+    flex-direction: column-reverse;
   }
 }

@@ -3,59 +3,71 @@ const faders = document.querySelectorAll('.fade-in');
 
 // Settings for the observer
 const appearOptions = {
-  threshold: 0.15, // Triggers when 15% of the element is visible
-  rootMargin: "0px 0px -50px 0px" // Triggers slightly before the bottom of the screen
+  threshold: 0.15, 
+  rootMargin: "0px 0px -50px 0px" 
 };
 
 // The Observer function
 const appearOnScroll = new IntersectionObserver(function(entries, observer) {
   entries.forEach(entry => {
     if (!entry.isIntersecting) {
-      return; // Do nothing if it's not on screen yet
+      return; // <-- Removed the stray 't' here!
     } else {
-      entry.target.classList.add('visible'); // Add the visible class to trigger CSS
-      observer.unobserve(entry.target); // Stop observing once it has faded in
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target); 
     }
   });
 }, appearOptions);
 
-// Apply the observer to each element
 faders.forEach(fader => {
   appearOnScroll.observe(fader);
 });
 
-const contactForm = document.getElementById('contactForm');
+/* =========================================
+   Contact Form UI States
+   ========================================= */
+const contactForm = document.getElementById('contact-form');
+const submitBtn = document.getElementById('submit-btn');
+const successMessage = document.getElementById('success-message');
 
 if (contactForm) {
   contactForm.addEventListener('submit', async function(e) {
-    e.preventDefault(); // Stops the page from reloading
-
-    // Gather the data from the inputs
-    const formData = {
-      name: document.getElementById('name').value,
-      email: document.getElementById('email').value,
-      service: document.getElementById('service').value
-    };
+    e.preventDefault(); 
+    
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = '0.7';
+    submitBtn.style.cursor = 'not-allowed';
 
     try {
-      // Send the data to your Node server
+      const formData = new FormData(contactForm);
+      const data = Object.fromEntries(formData);
+
+      // Updated to match the exact route in your server.js
       const response = await fetch('http://localhost:3000/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(data)
       });
 
       if (response.ok) {
-        alert('Message sent successfully! We will be in touch soon.');
-        contactForm.reset(); // Clears the form fields
+        contactForm.style.display = 'none';
+        successMessage.style.display = 'block';
+        
+        successMessage.classList.add('fade-in', 'visible');
       } else {
-        alert('Something went wrong. Please try again.');
+        throw new Error('Network response was not ok');
       }
+
     } catch (error) {
-      console.error('Error:', error);
-      alert('Failed to send message. Make sure the server is running!');
+      console.error('Form submission error:', error);
+      submitBtn.textContent = 'Error - Please Try Again';
+      submitBtn.disabled = false;
+      submitBtn.style.opacity = '1';
+      submitBtn.style.cursor = 'pointer';
     }
   });
 }
+
