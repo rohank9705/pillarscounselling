@@ -106,6 +106,10 @@ h1, h2, h4 {
   border-bottom: 3px solid var(--accent-gold); 
 }
 
+.desc1 {
+  text-align: center;
+}
+
 
 /* =========================================
    Logo Styling
