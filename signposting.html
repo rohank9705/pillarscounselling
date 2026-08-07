@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signposting & Support | Pillars Counselling</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="images/Untitled_design-removebg-preview.png"
+    />
+  </head>
+
+  <style>
+      /* =========================================
+         1. UNIVERSAL MOBILE FIXES (< 768px)
+         ========================================= */
+      @media (max-width: 767px) {
+        body {
+          overflow-x: hidden;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .services-master-layout,
+        .signpost-master-layout,
+        .hero-section {
+          max-width: 92% !important;
+          width: 92% !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          box-sizing: border-box !important;
+        }
+
+        /* --- MOBILE HEADER DESIGN --- */
+        .header {
+          display: flex !important;
+          flex-direction: row !important;
+          justify-content: space-between !important;
+          align-items: center !important;
+          padding: 0.4rem 1.25rem !important;
+          width: 100% !important;
+          box-sizing: border-box !important;
+        }
+
+        .header__logo { margin: 0 !important; display: flex; align-items: center; height: 100%; }
+        .header__logo-img { height: 150px !important; width: auto !important; }
+
+        .header__nav { display: flex; flex-direction: column; align-items: flex-end !important; }
+        .header__nav-list { display: flex; flex-direction: column; align-items: flex-end !important; width: 100%; margin: 0; padding: 0; list-style: none; }
+        .header__nav-item { position: relative !important; width: 100%; text-align: right !important; padding: 0.2rem 0; }
+        
+        .dropdown { display: none !important; }
+        .header__nav-item.active-mobile-dropdown .dropdown {
+          display: flex !important; flex-direction: column !important; align-items: flex-end !important; position: static !important; width: 100% !important; box-shadow: none !important; background: transparent !important; padding: 0 !important; margin: 0.2rem 0 0 0 !important;
+        }
+        .dropdown-content a { text-align: right !important; padding: 0.3rem 0 !important; white-space: normal !important; }
+
+        /* --- SPACING FIXES --- */
+        .hero-section, .main > section { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+        form, input, select, textarea, .contact-form { max-width: 100% !important; box-sizing: border-box !important; }
+        h1, h2 { margin-top: 0.5rem !important; margin-bottom: 0.5rem !important; }
+        .separation { margin-top: 0.75rem !important; margin-bottom: 0.75rem !important; }
+        p { margin-top: 0 !important; margin-bottom: 0.75rem !important; }
+        
+        .qualifications-box h3, .qualifications-box h4, .qualifications-box p { text-align: center !important; }
+
+        /* --- ANDROID/SAMSUNG CARD CENTERING FIX --- */
+        /* Forces the grid into a flex-column so Chromium browsers center it perfectly */
+        .qualifications-section {
+          width: 92% !important;
+          max-width: 92% !important;
+          margin: 0 auto !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+        .signpost-grid {
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: center !important;
+          width: 100% !important;
+          margin: 0 auto !important;
+        }
+        .signpost-grid .qualifications-box {
+          width: 100% !important;
+          max-width: 100% !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+          padding: 2.5rem 1rem !important;
+        }
+        .emergency-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center !important;
+          gap: 1.5rem;
+          width: 100%;
+        }
+      }
+
+      /* =========================================
+         2. DESKTOP GRID STYLES (Signposting)
+         ========================================= */
+      @media (min-width: 768px) {
+        .qualifications-section {
+          max-width: 1200px !important;
+          width: 90% !important;
+          margin: 0 auto !important;
+          box-sizing: border-box;
+          padding-bottom: 4rem;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+        .signpost-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+          width: 100%;
+        }
+        .signpost-grid .emergency-card { grid-column: 1 / -1; }
+        .emergency-content {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 2rem;
+          width: 100%;
+        }
+      }
+
+      /* Shared Global Card Styles */
+      .signpost-grid .qualifications-box {
+        box-sizing: border-box;
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .signpost-list { list-style: none; padding: 0; margin-top: 1rem; text-align: center; width: 100%; }
+      .signpost-list li { margin-bottom: 0.8rem; font-size: 0.95rem; }
+      .signpost-list a { color: var(--color-heading); text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
+      .signpost-list a:hover { color: var(--accent-tertiary); }
+    </style>
+
+  <body>
+    <header class="header">
+      <div class="header__logo">
+        <a href="index.html">
+          <img
+            src="images/Untitled_design-removebg-preview.png"
+            alt="Pillars Counselling Services Logo"
+            class="header__logo-img"
+          />
+        </a>
+      </div>
+
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a
+              href="index.html"
+              class="header__nav-link"
+              >HOME</a
+            >
+          </li>
+          <li class="header__nav-item">
+            <a href="aboutme.html" class="header__nav-link">ABOUT ME</a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link header__nav-link--active">RESOURCES</a>
+            <div class="dropdown">
+              <div class="dropdown-content">
+                <a href="signposting.html">Useful Links | Signposting</a>
+                <a href="services.html">Types of Therapy</a>
+              </div>
+            </div>
+          </li>
+          <li class="header__nav-item">
+            <a href="contact.html" class="header__nav-link">CONTACT</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="main">
+      <!-- Centered Introduction -->
+      <section
+        class="hero-section fade-in"
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center !important;
+          text-align: center;
+          padding: 1rem 2rem 1rem; /* Dropped from 8rem to 3rem */
+          min-height: auto !important; /* Stops the section from stretching down the screen */
+          width: 100%;
+        "
+      >
+        <h1 style="text-align: center; margin-top: 0; margin-bottom: 1rem">
+          Signposting & Useful Support
+        </h1>
+        <div
+          style="
+            max-width: 800px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          "
+        >
+          <p
+            style="
+              margin-top: 0;
+              margin-bottom: 0.5rem;
+              text-align: center !important;
+              width: 100%;
+            "
+          >
+            Sometimes the right support extends beyond counselling. Whether
+            you're looking for immediate help, specialist advice, or support for
+            a particular issue, the organisations below may be helpful.
+          </p>
+          <p
+            style="
+              margin-top: 0;
+              margin-bottom: 10;
+              text-align: center !important;
+              width: 100%;
+            "
+          >
+            If you're unsure which service is right for you, please don't
+            hesitate to ask.
+          </p>
+        </div>
+      </section>
+
+      <!-- Resources Grid Section (fade-in restored) -->
+      <section class="qualifications-section">
+        <style>
+          /* 1. Force the parent wrapper to expand and remove inherited side padding */
+          .qualifications-section {
+            max-width: 1200px !important;
+            width: 90% !important;
+            margin: 0 auto !important;
+            box-sizing: border-box;
+            padding-bottom: 4rem;
+            padding-left: 0 !important; /* Overrides the 1.5rem padding from style.css */
+            padding-right: 0 !important;
+          }
+
+          /* 2. Grid setup */
+          .signpost-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            width: 100%;
+            justify-items: center; /* Forces the cards into the true center */
+          }
+
+          /* 3. Cards fill their column and center their content */
+          .signpost-grid .qualifications-box {
+            max-width: 100% !important;
+            width: 100% !important;
+            box-sizing: border-box;
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers the content blocks */
+            text-align: center; /* Centers the text */
+          }
+
+          .signpost-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+            text-align: center; /* Ensures all list items are centered */
+            width: 100%;
+          }
+
+          .signpost-list li {
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+          }
+
+          .signpost-list a {
+            color: var(--color-heading);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+          }
+
+          .signpost-list a:hover {
+            color: var(--accent-tertiary);
+          }
+
+          /* 4. Desktop Layout */
+          @media (min-width: 768px) {
+            .signpost-grid {
+              grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* Make the emergency card span full width at the top */
+            .signpost-grid .emergency-card {
+              grid-column: 1 / -1;
+            }
+
+            .emergency-content {
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 2rem;
+              width: 100%;
+            }
+          }
+
+          /* 5. Mobile Layout specifically for the Emergency Card Content */
+          @media (max-width: 767px) {
+            .emergency-content {
+              display: flex;
+              flex-direction: column;
+              align-items: center !important; /* Centers Samaritans, NHS 24, etc. */
+              gap: 1.5rem;
+              width: 100%;
+            }
+          }
+        </style>
+
+        <div class="signpost-grid">
+          <!-- EMERGENCY CARD (Full Width - Thinned border to 2px) -->
+          <div
+            class="qualifications-box emergency-card"
+            style="border-left: 1px solid var(--accent-primary)"
+          >
+            <h3 style="color: var(--color-heading); margin-bottom: 1rem">
+              Out of Hours / Immediate Help
+            </h3>
+            <p style="line-height: 1.6; margin-bottom: 1.5rem">
+              Please note that we are not an emergency or crisis service. If you
+              are experiencing a mental health crisis, help can be sought from:
+            </p>
+
+            <div class="emergency-content">
+              <div>
+                <h4 style="margin-bottom: 0.5rem; color: var(--color-heading)">
+                  Samaritans Scotland
+                </h4>
+                <ul class="signpost-list">
+                  <li>📞 <a href="tel:116123">116 123</a></li>
+                  <li>
+                    ✉️ <a href="mailto:jo@samaritans.org">jo@samaritans.org</a>
+                  </li>
+                  <li>
+                    🌐
+                    <a
+                      href="https://www.samaritans.org"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >samaritans.org</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 style="margin-bottom: 0.5rem; color: var(--color-heading)">
+                  Breathing Space
+                </h4>
+                <ul class="signpost-list">
+                  <li>📞 <a href="tel:0800838587">0800 838 587</a></li>
+                  <li>
+                    🌐
+                    <a
+                      href="https://breathingspace.scot"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >breathingspace.scot</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 style="margin-bottom: 0.5rem; color: var(--color-heading)">
+                  Medical Emergencies
+                </h4>
+                <ul class="signpost-list">
+                  <li>
+                    📞 <strong>NHS 24:</strong> <a href="tel:111">Call 111</a>
+                  </li>
+                  <li>
+                    ⚠️ <strong>Emergency:</strong>
+                    <a href="tel:999">Call 999</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- REGULAR CARDS -->
+          <div class="qualifications-box">
+            <h3 style="color: var(--color-heading); margin-bottom: 1rem">
+              General Mental Health Support
+            </h3>
+            <ul class="signpost-list">
+              <li>
+                <strong>Scottish Action for Mental Health (SAMH)</strong><br />
+                🌐
+                <a
+                  href="https://www.samh.org.uk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >samh.org.uk</a
+                >
+              </li>
+              <li style="margin-top: 1rem">
+                <strong>Change Mental Health</strong><br />
+                🌐
+                <a
+                  href="https://changemh.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >changemh.org</a
+                >
+              </li>
+              <li style="margin-top: 1rem">
+                <strong>Mind UK</strong><br />
+                🌐
+                <a
+                  href="https://www.mind.org.uk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >mind.org.uk</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="qualifications-box">
+            <h3 style="color: var(--color-heading); margin-bottom: 1rem">
+              LGBTQ+ Support
+            </h3>
+            <ul class="signpost-list">
+              <li>
+                <strong>LGBT Youth Scotland</strong><br />
+                📞 <a href="tel:08088010432">0808 801 0432</a><br />
+                🌐
+                <a
+                  href="https://www.lgbtyouth.org.uk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >lgbtyouth.org.uk</a
+                >
+              </li>
+              <li style="margin-top: 1rem">
+                <strong>Galop - Survivors of Abuse</strong><br />
+                📞 <a href="tel:08009995428">0800 999 5428</a>
+              </li>
+              <li style="margin-top: 1rem">
+                <strong>LGBT Switchboard</strong><br />
+                📞 <a href="tel:08000119100">0800 0119 100</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="qualifications-box">
+            <h3 style="color: var(--color-heading); margin-bottom: 1rem">
+              Eating Disorder Help
+            </h3>
+            <ul class="signpost-list">
+              <li>
+                <strong>Beat Eating Disorders</strong><br />
+                📞 <a href="tel:08088010432">0808 801 0432</a><br />
+                ✉️
+                <a href="mailto:scotlandhelp@beateatingdisorders.org.uk"
+                  >scotlandhelp@beateatingdisorders.org.uk</a
+                >
+              </li>
+              <li style="margin-top: 1rem">
+                <strong>Talking ED's</strong><br />
+                ✉️
+                <a href="mailto:support@eatingdisorderscotland.co.uk"
+                  >support@eatingdisorderscotland.co.uk</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="qualifications-box">
+            <h3 style="color: var(--color-heading); margin-bottom: 1rem">
+              Children & Young People
+            </h3>
+            <ul class="signpost-list">
+              <li>
+                <strong>Childline</strong><br />
+                📞 <a href="tel:08001111">0800 1111</a><br />
+                🌐
+                <a
+                  href="https://www.childline.org.uk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >childline.org.uk</a
+                >
+              </li>
+              <li style="margin-top: 1rem">
+                <strong>Children 1st</strong><br />
+                📞 <a href="tel:08000282233">08000 28 22 33</a><br />
+                🌐
+                <a
+                  href="https://www.children1st.org.uk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >children1st.org.uk</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__top">
+        <!-- Column 1: Navigation -->
+        <div class="footer__column">
+          <h4>Quick Links</h4>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="signposting.html">Signposting</a></li>
+            <li><a href="services.html">Types of Therapy</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacypolicy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 2: Crisis Support -->
+        <div class="footer__column">
+          <h4>Need Immediate Help?</h4>
+          <p>
+            If you are in crisis or need urgent support, please reach out to
+            emergency services or a dedicated helpline:
+          </p>
+          <ul class="footer__crisis-list">
+            <li><strong>Emergency:</strong> Call 999</li>
+            <li><strong>NHS 24:</strong> Call 111</li>
+            <li><strong>Samaritans:</strong> Call 116 123</li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Trust Badge -->
+        <div class="footer__column">
+          <h4>Professional Affiliation</h4>
+          <div class="footer__badge">
+            <p>
+              Registered Member of the British Association for Counselling and
+              Psychotherapy (BACP)
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar: Copyright & Credit -->
+      <div class="footer__bottom">
+        <p>&copy; 2026 Pillars Counselling Services. All rights reserved.</p>
+
+        <div class="footer__creator">
+          Designed & Developed by
+          <a
+            href="https://github.com/rohank9705"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Rohan</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

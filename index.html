@@ -17,8 +17,76 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/png" href="images/Untitled_design-removebg-preview.png">
+    <link
+      rel="icon"
+      type="image/png"
+      href="images/Untitled_design-removebg-preview.png"
+    />
   </head>
+
+  <style>
+    /* Universal Mobile Fixes for Screen Widths Under 768px */
+    @media (max-width: 767px) {
+      /* 1. Prevent horizontal scrolling and force body to stay contained */
+      body {
+        overflow-x: hidden;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* 2. Center and bound all main containers and boxes so they don't clip off the right */
+      /* Center and bound only the content boxes, not the master section wrappers */
+      .qualifications-section,
+      .services-master-layout,
+      .signpost-master-layout,
+      .qualifications-box {
+        max-width: 92% !important;
+        width: 92% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        box-sizing: border-box !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
+      }
+
+      /* 3. Fix text overlap issues under images (like in image 4) */
+      .hero-section,
+      .main > section {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+      }
+
+      /* 4. Fix form element widths on mobile (image 2) */
+      form,
+      input,
+      select,
+      textarea,
+      .contact-form {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      h1,
+      h2 {
+        margin-top: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
+      }
+
+      /* Tighten spacing around divider lines */
+      .separation {
+        margin-top: 0.75rem !important;
+        margin-bottom: 0.75rem !important;
+      }
+
+      /* Keep paragraph spacing snug on mobile */
+      p {
+        margin-top: 0 !important;
+        margin-bottom: 0.75rem !important;
+      }
+    }
+  </style>
 
   <body>
     <header class="header">
@@ -31,7 +99,7 @@
           />
         </a>
       </div>
-      
+
       <nav class="header__nav">
         <ul class="header__nav-list">
           <li class="header__nav-item">
@@ -45,10 +113,16 @@
             <a href="aboutme.html" class="header__nav-link">ABOUT ME</a>
           </li>
           <li class="header__nav-item">
-            <a href="contact.html" class="header__nav-link">CONTACT</a>
+            <a class="header__nav-link">RESOURCES</a>
+            <div class="dropdown">
+              <div class="dropdown-content">
+                <a href="signposting.html">Useful Links | Signposting</a>
+                <a href="services.html">Types of Therapy</a>
+              </div>
+            </div>
           </li>
           <li class="header__nav-item">
-            <a href="services.html" class="header__nav-link">OUR SERVICES</a>
+            <a href="contact.html" class="header__nav-link">CONTACT</a>
           </li>
         </ul>
       </nav>
@@ -68,17 +142,13 @@
 
           <div class="counselling-desc">
             <p>
-              Here at Pillars Counselling Services, we believe that healing and
-              personal development begin with a solid, unwavering foundation.
-              Guided by our core principles of trust, respect, and growth, we
-              provide a safe, confidential, and compassionate space for you to
-              navigate life's challenges. Whether you are managing anxiety,
-              working through difficult transitions, or simply seeking a deeper
-              understanding of yourself, our tailored therapeutic approach is
-              designed to meet you exactly where you are. We are dedicated to
-              walking alongside you on your journey, empowering you to overcome
-              obstacles, build inner resilience, and cultivate a more balanced,
-              fulfilling life.
+              Pillars Counselling Services is a new and growing therapeutic
+              service, created with the aim of providing accessible,
+              compassionate support for individuals navigating life’s
+              challenges. Although still in its infancy, this website and
+              service are developing with a commitment to creating a safe,
+              supportive space where people can explore their thoughts,
+              feelings, and experiences at their own pace.
             </p>
 
             <hr class="separation" />
@@ -104,23 +174,21 @@
 
         <div class="hero__content">
           <div class="counselling-facts__header">
-            <h2>HOW CAN COUNSELLING HELP?</h2>
+            <h2>OUR METHODS</h2>
           </div>
           <div class="counselling-desc">
             <p>
-              Research consistently shows that engaging in professional
-              counselling can lead to profound, lasting improvements in both
-              mental and physical well-being. Beyond simply providing a safe
-              space to talk, therapy utilises evidence-based approaches to help
-              rewire deeply ingrained thought patterns and reduce the physical
-              symptoms of chronic stress and anxiety. Studies indicate that
-              individuals who participate in regular counselling develop
-              stronger emotional regulation, more effective communication
-              skills, and healthier boundaries in their relationships.
-              Ultimately, therapy acts as a collaborative toolkit, equipping you
-              with the practical coping strategies needed to break unhelpful
-              cycles, gain mental clarity, and navigate life's unexpected
-              challenges with confidence.
+              My main therapeutic approach is Cognitive Behavioural Therapy
+              (CBT), which focuses on understanding the connection between our
+              thoughts, emotions, and behaviours, while supporting individuals
+              to develop new perspectives and practical strategies for positive
+              change. However, I recognise that therapy is not a
+              one-size-fits-all approach. Everyone’s experiences, needs, and
+              preferences are different, and the right therapeutic relationship
+              and approach are essential. Through this service, I aim to help
+              guide individuals towards the type of therapy that feels most
+              suitable for them, whether that is CBT or another therapeutic
+              modality that better aligns with their goals.
             </p>
           </div>
         </div>
@@ -132,9 +200,21 @@
         </div>
 
         <div class="counselling-desc fade-in">
+          <p style="text-align: center">
+            At Pillars Counselling Services, the focus is on offering support,
+            understanding, and a pathway towards greater self-awareness,
+            resilience, and wellbeing. Whether you are seeking help during a
+            difficult period, looking to understand yourself better, or
+            considering therapy for the first time, you are welcome to explore
+            the support available.
+          </p>
           <p class="desc1">
-            <a href="contact.html" class="contact-link"
-              >Get in contact with us</a>
+            <a
+              href="contact.html"
+              class="contact-link"
+              style="text-decoration: underline"
+              >Get in contact with us</a
+            >
             and we can talk more about what suits you best.
           </p>
         </div>
@@ -142,50 +222,62 @@
     </main>
 
     <footer class="footer">
-  <div class="footer__top">
-    <!-- Column 1: Navigation -->
-    <div class="footer__column">
-      <h4>Quick Links</h4>
-      <ul class="footer__links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="aboutme.html">About Me</a></li>
-        <li><a href="services.html">Our Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="privacypolicy.pdf" download>Privacy Policy</a></li>
-      </ul>
-    </div>
+      <div class="footer__top">
+        <!-- Column 1: Navigation -->
+        <div class="footer__column">
+          <h4>Quick Links</h4>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="signposting.html">Signposting</a></li>
+            <li><a href="services.html">Types of Therapy</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacypolicy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
 
-    <!-- Column 2: Crisis Support -->
-    <div class="footer__column">
-      <h4>Need Immediate Help?</h4>
-      <p>If you are in crisis or need urgent support, please reach out to emergency services or a dedicated helpline:</p>
-      <ul class="footer__crisis-list">
-        <li><strong>Emergency:</strong> Call 999</li>
-        <li><strong>NHS 24:</strong> Call 111</li>
-        <li><strong>Samaritans:</strong> Call 116 123</li>
-      </ul>
-    </div>
+        <!-- Column 2: Crisis Support -->
+        <div class="footer__column">
+          <h4>Need Immediate Help?</h4>
+          <p>
+            If you are in crisis or need urgent support, please reach out to
+            emergency services or a dedicated helpline:
+          </p>
+          <ul class="footer__crisis-list">
+            <li><strong>Emergency:</strong> Call 999</li>
+            <li><strong>NHS 24:</strong> Call 111</li>
+            <li><strong>Samaritans:</strong> Call 116 123</li>
+          </ul>
+        </div>
 
-    <!-- Column 3: Trust Badge -->
-    <div class="footer__column">
-      <h4>Professional Affiliation</h4>
-      <div class="footer__badge">
-        <p>Registered Member of the British Association for Counselling and Psychotherapy (BACP)</p>
-        <!-- You can drop a small BACP logo image right here later! -->
+        <!-- Column 3: Trust Badge -->
+        <div class="footer__column">
+          <h4>Professional Affiliation</h4>
+          <div class="footer__badge">
+            <p>
+              Registered Member of the British Association for Counselling and
+              Psychotherapy (BACP)
+            </p>
+            <!-- You can drop a small BACP logo image right here later! -->
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <!-- Bottom Bar: Copyright & Credit -->
-  <div class="footer__bottom">
-    <p>&copy; 2026 Pillars Counselling Services. All rights reserved.</p>
-    
-    <div class="footer__creator">
-      Designed & Developed by 
-      <a href="https://github.com/rohank9705" target="_blank" rel="noopener noreferrer">Rohan</a>
-    </div>
-  </div>
-</footer>
+      <!-- Bottom Bar: Copyright & Credit -->
+      <div class="footer__bottom">
+        <p>&copy; 2026 Pillars Counselling Services. All rights reserved.</p>
+
+        <div class="footer__creator">
+          Designed & Developed by
+          <a
+            href="https://github.com/rohank9705"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Rohan</a
+          >
+        </div>
+      </div>
+    </footer>
 
     <script src="app.js"></script>
   </body>

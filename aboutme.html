@@ -24,6 +24,70 @@
     />
   </head>
 
+  <style>
+    /* Universal Mobile Fixes for Screen Widths Under 768px */
+    @media (max-width: 767px) {
+      /* 1. Prevent horizontal scrolling and force body to stay contained */
+      body {
+        overflow-x: hidden;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* 2. Center and bound all main containers and boxes so they don't clip off the right */
+      .qualifications-section,
+      .services-master-layout,
+      .signpost-master-layout,
+      .hero-section,
+      .qualifications-box {
+        max-width: 92% !important;
+        width: 92% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        box-sizing: border-box !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
+      }
+
+      /* 3. Fix text overlap issues under images (like in image 4) */
+      .hero-section,
+      .main > section {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+      }
+
+      /* 4. Fix form element widths on mobile (image 2) */
+      form,
+      input,
+      select,
+      textarea,
+      .contact-form {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      h1,
+      h2 {
+        margin-top: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
+      }
+
+      /* Tighten spacing around divider lines */
+      .separation {
+        margin-top: 0.75rem !important;
+        margin-bottom: 0.75rem !important;
+      }
+
+      /* Keep paragraph spacing snug on mobile */
+      p {
+        margin-top: 0 !important;
+        margin-bottom: 0.75rem !important;
+      }
+    }
+  </style>
+
   <body>
     <header class="header">
       <div class="header__logo">
@@ -35,24 +99,30 @@
           />
         </a>
       </div>
-
+      
       <nav class="header__nav">
         <ul class="header__nav-list">
           <li class="header__nav-item">
-            <a href="index.html" class="header__nav-link">HOME</a>
-          </li>
-          <li class="header__nav-item">
             <a
-              href="aboutme.html"
-              class="header__nav-link header__nav-link--active"
-              >ABOUT ME</a
+              href="index.html"
+              class="header__nav-link"
+              >HOME</a
             >
           </li>
           <li class="header__nav-item">
-            <a href="contact.html" class="header__nav-link">CONTACT</a>
+            <a href="aboutme.html" class="header__nav-link header__nav-link--active">ABOUT ME</a>
           </li>
           <li class="header__nav-item">
-            <a href="services.html" class="header__nav-link">OUR SERVICES</a>
+            <a class="header__nav-link">RESOURCES</a>
+            <div class="dropdown">
+              <div class="dropdown-content">
+                <a href="signposting.html">Useful Links | Signposting</a>
+                <a href="services.html">Types of Therapy</a>
+              </div>
+            </div>
+          </li>
+          <li class="header__nav-item">
+            <a href="contact.html" class="header__nav-link">CONTACT</a>
           </li>
         </ul>
       </nav>
@@ -63,9 +133,8 @@
       <section class="hero-section fade-in">
         <!-- LEFT COLUMN: Image -->
         <div class="hero__image-wrapper">
-          <!-- Swap this src for a portrait of the client or a calming aesthetic image -->
           <img
-            src="images/counsellor-portrait.png"
+            src="images/Gemini_Generated_Image_.png"
             alt="Portrait of the Counsellor"
             class="hero__image"
           />
@@ -80,22 +149,31 @@
           </h3>
           <hr class="separation" />
           <p>
-            Hello, and welcome. My name is Daryl, and I am a compassionate, client-focused Cognitive
-            Behavioural Therapist dedicated to supporting individuals through
-            anxiety, depression, stress, and low self-esteem. My practice is
-            built on providing a safe, collaborative, and deeply inclusive
-            environment. I have extensive experience working with a wonderfully
-            diverse range of clients—including neurodivergent individuals,
-            veterans, and professionals from various cultural backgrounds.
-            Specialising in structured, evidence-based CBT, we will work
-            together to set clear, achievable goals tailored to your unique
-            needs. Whether we are utilising practical tools like cognitive
-            restructuring and behavioural activation, or developing safe coping
-            strategies for moments of crisis, my aim is to equip you with the
-            skills you need for lasting emotional resilience. Backed by rigorous
-            training in safeguarding, I am here to provide a secure space where
-            you can safely explore your challenges and achieve meaningful,
-            positive change.
+            Hello, and welcome. My name is Daryl. I was born in Glasgow,
+            Scotland, and have a good understanding of the unique pressures and
+            challenges that many people in this part of the world experience.
+            Growing up here has given me an appreciation of the resilience
+            people show, even when life feels overwhelming. Before becoming a
+            Cognitive Behavioural Therapist, I spent over 20 years working in a
+            variety of roles. In my twenties, I worked across the environmental
+            sector, with roles in horticulture, habitat restoration and with
+            recycling charities, before spending much of my thirties in retail
+            management across Newcastle and Ireland. These experiences allowed
+            me to meet people from all walks of life and reinforced my interest
+            in understanding what helps people overcome adversity and thrive. 
+          </p>
+          <hr class="separation" />
+          <p>
+            Today, I am a qualified Cognitive Behavioural Therapist, having
+            completed my CBT Diploma with ACT Counselling Services. I am a
+            registered member of both the British Association for Counselling
+            and Psychotherapy (BACP) and COSCA, and I am currently studying
+            towards a BSc (Hons) in Psychology. I believe therapy is built on
+            trust, collaboration and compassion. Whether you're experiencing
+            anxiety, low mood, stress or simply feeling stuck, I aim to provide
+            a warm, supportive and non-judgemental space where we can explore
+            your experiences, develop practical coping strategies, and build
+            strong foundations for your wellbeing.
           </p>
         </div>
       </section>
@@ -106,7 +184,7 @@
           <h3>Training & Core Competencies</h3>
           <ul class="qualifications-list">
             <li>
-              Specialized Support for Anxiety, Depression, Stress & Self-Esteem
+              Specialised Support for Anxiety, Depression, Stress & Self-Esteem
             </li>
             <li>
               Evidence-Based CBT Techniques (Cognitive Restructuring,
@@ -118,7 +196,11 @@
           </ul>
         </div>
       </section>
+
+      <!-- Pricing Section -->
+      
     </section>
+
     <footer class="footer">
       <div class="footer__top">
         <!-- Column 1: Navigation -->
@@ -127,9 +209,10 @@
           <ul class="footer__links">
             <li><a href="index.html">Home</a></li>
             <li><a href="aboutme.html">About Me</a></li>
-            <li><a href="services.html">Our Services</a></li>
+            <li><a href="signposting.html">Signposting</a></li>
+            <li><a href="services.html">Types of Therapy</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="privacypolicy.pdf" download>Privacy Policy</a></li>
+            <li><a href="privacypolicy.html">Privacy Policy</a></li>
           </ul>
         </div>
 
@@ -155,7 +238,6 @@
               Registered Member of the British Association for Counselling and
               Psychotherapy (BACP)
             </p>
-            <!-- You can drop a small BACP logo image right here later! -->
           </div>
         </div>
       </div>

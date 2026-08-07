@@ -3,23 +3,94 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Couselling Services</title>
+    <title>Our Services | Pillars Counselling</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" /><link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;700;800&display=swap"
       rel="stylesheet"
     />
-        <link rel="icon" type="image/png" href="images/Untitled_design-removebg-preview.png">
-
+    <link
+      rel="icon"
+      type="image/png"
+      href="images/Untitled_design-removebg-preview.png"
+    />
   </head>
+
+  <style>
+    /* Universal Mobile Fixes for Screen Widths Under 768px */
+    @media (max-width: 767px) {
+      /* 1. Prevent horizontal scrolling and force body to stay contained */
+      body {
+        overflow-x: hidden;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* 2. Center and bound all main containers and boxes so they don't clip off the right */
+      .qualifications-section,
+      .services-master-layout,
+      .signpost-master-layout,
+      .hero-section,
+      .qualifications-box {
+        max-width: 92% !important;
+        width: 92% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        box-sizing: border-box !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
+      }
+
+      /* 3. Fix text overlap issues under images (like in image 4) */
+      .hero-section,
+      .main > section {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+      }
+
+      /* 4. Fix form element widths on mobile (image 2) */
+      form,
+      input,
+      select,
+      textarea,
+      .contact-form {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      h1,
+      h2 {
+        margin-top: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
+      }
+
+      /* Tighten spacing around divider lines */
+      .separation {
+        margin-top: 0.75rem !important;
+        margin-bottom: 0.75rem !important;
+      }
+
+      /* Keep paragraph spacing snug on mobile */
+      p {
+        margin-top: 0 !important;
+        margin-bottom: 0.75rem !important;
+      }
+    }
+  </style>
 
   <body>
     <header class="header">
-        <div class="header__logo">
+      <div class="header__logo">
         <a href="index.html">
           <img
             src="images/Untitled_design-removebg-preview.png"
@@ -28,75 +99,315 @@
           />
         </a>
       </div>
-      
-        <nav class="header__nav">
-          <ul class="header__nav-list">
-            <li class="header__nav-item">
-              <a
-                href="index.html"
-                class="header__nav-link"
-                >HOME</a
-              >
-            </li>
-            <li class="header__nav-item">
-              <a href="aboutme.html" class="header__nav-link">ABOUT ME</a>
-            </li>
-            <li class="header__nav-item">
-              <a href="contact.html" class="header__nav-link">CONTACT</a>
-            </li>
-            <li class="header__nav-item">
-              <a href="services.html" class="header__nav-link header__nav-link header__nav-link--active">OUR SERVICES</a>
-            </li>
-          </ul>
-        </nav>
+
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a
+              href="index.html"
+              class="header__nav-link "
+              >HOME</a
+            >
+          </li>
+          <li class="header__nav-item">
+            <a href="aboutme.html" class="header__nav-link">ABOUT ME</a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link header__nav-link--active">RESOURCES</a>
+            <div class="dropdown">
+              <div class="dropdown-content">
+                <a href="signposting.html">Useful Links | Signposting</a>
+                <a href="services.html">Types of Therapy</a>
+              </div>
+            </div>
+          </li>
+          <li class="header__nav-item">
+            <a href="contact.html" class="header__nav-link">CONTACT</a>
+          </li>
+        </ul>
+      </nav>
     </header>
 
+    <section class="main">
+      <!-- Services Introduction -->
+      <!-- Master Services Layout (Text on Left, Thinner Rows on Right) -->
+      <section class="services-master-layout fade-in">
+        <style>
+          /* 1. Outer Master Layout (Splits Left and Right) */
+          .services-master-layout {
+            max-width: 1200px !important;
+            width: 95% !important;
+            margin: 3rem auto !important; /* Slightly reduced top margin */
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem; /* Slightly reduced gap between left and right columns */
+          }
+
+          /* Desktop Left/Right Split */
+          @media (min-width: 1024px) {
+            .services-master-layout {
+              /* Left column slightly wider to accommodate the larger text */
+              grid-template-columns: 450px 1fr;
+              align-items: start;
+            }
+          }
+
+          /* 2. Left Column Styling (Larger Text) */
+          .services-sidebar {
+            text-align: left;
+            position: sticky;
+            top: 2rem;
+          }
+
+          .services-sidebar h1 {
+            margin-top: 0;
+            text-align: left !important;
+          }
+
+          .services-sidebar p {
+            text-align: left !important;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+            font-size: 1.15rem; /* Increased font size for the left side */
+          }
+
+          /* 3. Right Column Layout (Thinner, Stacked Rows) */
+          .therapy-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem; /* Reduced gap from 2rem to 1rem to pull cards tighter */
+            width: 100%;
+          }
+
+          /* Force the boxes to have less internal padding so they are thinner */
+          .therapy-grid .qualifications-box {
+            max-width: 100% !important;
+            width: 100% !important;
+            box-sizing: border-box;
+            text-align: left;
+            padding: 0.75rem 1.5rem !important; /* Tighter padding (top/bottom, left/right) */
+            margin-bottom: 0 !important;
+          }
+
+          /* Reduce the gap between the top border of the box and the header text */
+          .qualifications-box {
+            padding-top: 2rem !important; /* Reduces the top space (originally 3rem) */
+          }
+
+          /* Strip away the browser's hidden default margin above the heading */
+          .qualifications-box h3 {
+            margin-top: 0 !important;
+          }
+
+          /* Smaller headings inside the cards */
+          .therapy-grid .qualifications-box h3 {
+            font-size: 1.1rem !important;
+            margin-bottom: 0.25rem !important;
+          }
+
+          /* Smaller text inside the cards */
+          .therapy-grid .qualifications-box p {
+            font-size: 0.9rem !important;
+            line-height: 1.5 !important;
+            margin-bottom: 0 !important;
+          }
+
+          /* Adds a small gap only if a card has multiple paragraphs */
+          .therapy-grid .qualifications-box p + p {
+            margin-top: 0.7rem !important;
+          }
+
+          .therapy-grid .section-title {
+            text-align: left;
+            margin-top: 1rem;
+            margin-bottom: 0;
+          }
+
+          .therapy-grid .section-title h2 {
+            font-size: 1.4rem; /* Slightly smaller divider heading */
+          }
+        </style>
+
+        <!-- LEFT COLUMN: Intro Text -->
+        <div class="services-sidebar">
+          <h1>Types of Therapy</h1>
+          <hr class="separation" style="margin: 1.5rem 0" />
+          <p>
+            Choosing therapy can feel overwhelming, especially if you are unsure
+            which approach may be right for you. Different therapeutic
+            approaches offer different ways of understanding experiences,
+            creating change, and supporting personal growth.
+          </p>
+          <p>
+            At Pillars Counselling Services, my main therapeutic approach is
+            <strong>Cognitive Behavioural Therapy (CBT)</strong>. However, I
+            recognise that therapy is personal, and the most suitable approach
+            will depend on your individual needs, preferences, and goals. Below
+            is an overview of some common therapeutic approaches to help you
+            explore the different options available.
+          </p>
+        </div>
+
+        <!-- RIGHT COLUMN: Therapy Rows -->
+        <div class="therapy-grid">
+          <div class="qualifications-box">
+            <h3 style="color: var(--color-charcoal)">
+              Cognitive Behavioural Therapy (CBT)
+            </h3>
+            <p>
+              CBT is commonly used to support difficulties such as anxiety,
+              depression, stress, phobias, obsessive thoughts, and managing the
+              impact of long-term health conditions.
+            </p>
+          </div>
+
+          <div class="qualifications-box">
+            <h3 style="color: var(--color-charcoal)">Person-Centred Therapy</h3>
+            <p>
+              Through a genuine, accepting, and supportive therapeutic
+              relationship, this approach provides a space where you can explore
+              your potential, build self-awareness, and work towards becoming a
+              more fulfilled version of yourself.
+            </p>
+          </div>
+
+          <div class="qualifications-box">
+            <h3 style="color: var(--color-charcoal)">Psychodynamic Therapy</h3>
+            <p>
+              Psychodynamic Therapy explores how past experiences,
+              relationships, and deeper emotional patterns may influence the way
+              we experience life in the present.
+            </p>
+          </div>
+
+          <!-- SECTION DIVIDER -->
+          <div class="section-title">
+            <h2 style="color: var(--color-charcoal)">
+              Other Therapeutic Approaches
+            </h2>
+          </div>
+
+          <div class="qualifications-box">
+            <h3 style="color: var(--color-charcoal)">
+              Pluralistic Counselling
+            </h3>
+            <p>
+              Pluralistic Counselling recognises that there is no single
+              approach to therapy that works for everyone. It focuses on working
+              collaboratively with you to understand your individual needs,
+              preferences, and goals.
+            </p>
+            <p>
+              The therapist may draw from different therapeutic approaches and
+              adapt the support provided depending on what feels most helpful
+              for you.
+            </p>
+          </div>
+
+          <div class="qualifications-box">
+            <h3 style="color: var(--color-charcoal)">Humanistic Therapy</h3>
+            <p>
+              Humanistic therapy focuses on the individual as a whole and
+              emphasises personal growth, self-development, and reaching your
+              potential.
+            </p>
+            <p>
+              This approach supports individuals in developing self-awareness,
+              recognising their own strengths, and taking responsibility for
+              their choices and personal journey.
+            </p>
+          </div>
+
+          <div class="qualifications-box">
+            <h3 style="color: var(--color-charcoal)">
+              Eye Movement Desensitisation and Reprocessing (EMDR)
+            </h3>
+            <p>
+              EMDR is an approach often used to support individuals who have
+              experienced distressing or traumatic events, particularly those
+              experiencing symptoms associated with post-traumatic stress.
+            </p>
+            <p>
+              EMDR aims to help the brain process difficult memories so that
+              they become less overwhelming and easier to manage.
+            </p>
+          </div>
+
+          <div class="qualifications-box">
+            <h3 style="color: var(--color-charcoal)">Existential Therapy</h3>
+            <p>
+              Existential Therapy explores some of the deeper questions and
+              challenges of life, such as identity, meaning, choice,
+              responsibility, and how we find purpose.
+            </p>
+            <p>
+              This approach can support individuals in exploring their values,
+              making meaningful decisions, and developing a greater
+              understanding of their own life journey.
+            </p>
+          </div>
+        </div>
+      </section>
+    </section>
 
     <footer class="footer">
-  <div class="footer__top">
-    <!-- Column 1: Navigation -->
-    <div class="footer__column">
-      <h4>Quick Links</h4>
-      <ul class="footer__links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="aboutme.html">About Me</a></li>
-        <li><a href="services.html">Our Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="privacypolicy.pdf" download>Privacy Policy</a></li>
-      </ul>
-    </div>
+      <div class="footer__top">
+        <!-- Column 1: Navigation -->
+        <div class="footer__column">
+          <h4>Quick Links</h4>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="signposting.html">Signposting</a></li>
+            <li><a href="services.html">Types of Therapy</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacypolicy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
 
-    <!-- Column 2: Crisis Support -->
-    <div class="footer__column">
-      <h4>Need Immediate Help?</h4>
-      <p>If you are in crisis or need urgent support, please reach out to emergency services or a dedicated helpline:</p>
-      <ul class="footer__crisis-list">
-        <li><strong>Emergency:</strong> Call 999</li>
-        <li><strong>NHS 24:</strong> Call 111</li>
-        <li><strong>Samaritans:</strong> Call 116 123</li>
-      </ul>
-    </div>
+        <!-- Column 2: Crisis Support -->
+        <div class="footer__column">
+          <h4>Need Immediate Help?</h4>
+          <p>
+            If you are in crisis or need urgent support, please reach out to
+            emergency services or a dedicated helpline:
+          </p>
+          <ul class="footer__crisis-list">
+            <li><strong>Emergency:</strong> Call 999</li>
+            <li><strong>NHS 24:</strong> Call 111</li>
+            <li><strong>Samaritans:</strong> Call 116 123</li>
+          </ul>
+        </div>
 
-    <!-- Column 3: Trust Badge -->
-    <div class="footer__column">
-      <h4>Professional Affiliation</h4>
-      <div class="footer__badge">
-        <p>Registered Member of the British Association for Counselling and Psychotherapy (BACP)</p>
-        <!-- You can drop a small BACP logo image right here later! -->
+        <!-- Column 3: Trust Badge -->
+        <div class="footer__column">
+          <h4>Professional Affiliation</h4>
+          <div class="footer__badge">
+            <p>
+              Registered Member of the British Association for Counselling and
+              Psychotherapy (BACP)
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <!-- Bottom Bar: Copyright & Credit -->
-  <div class="footer__bottom">
-    <p>&copy; 2026 Pillars Counselling Services. All rights reserved.</p>
-    
-    <div class="footer__creator">
-      Designed & Developed by 
-      <a href="https://github.com/rohank9705" target="_blank" rel="noopener noreferrer">Rohan</a>
-    </div>
-  </div>
-</footer>
+      <!-- Bottom Bar: Copyright & Credit -->
+      <div class="footer__bottom">
+        <p>&copy; 2026 Pillars Counselling Services. All rights reserved.</p>
 
+        <div class="footer__creator">
+          Designed & Developed by
+          <a
+            href="https://github.com/rohank9705"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Rohan</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
   </body>
 </html>

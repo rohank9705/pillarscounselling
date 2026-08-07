@@ -35,12 +35,13 @@
           />
         </a>
       </div>
+      
       <nav class="header__nav">
         <ul class="header__nav-list">
           <li class="header__nav-item">
             <a
               href="index.html"
-              class="header__nav-link header__nav-link--active"
+              class="header__nav-link"
               >HOME</a
             >
           </li>
@@ -48,47 +49,60 @@
             <a href="aboutme.html" class="header__nav-link">ABOUT ME</a>
           </li>
           <li class="header__nav-item">
+            <a class="header__nav-link">RESOURCES</a>
+            <div class="dropdown">
+              <div class="dropdown-content">
+                <a href="signposting.html">Useful Links | Signposting</a>
+                <a href="services.html">Types of Therapy</a>
+              </div>
+            </div>
+          </li>
+          <li class="header__nav-item">
             <a href="contact.html" class="header__nav-link">CONTACT</a>
-          </li>
-          <li class="header__nav-item">
-            <a href="signposting.html" class="header__nav-link">SIGNPOSTING</a>
-          </li>
-          <li class="header__nav-item">
-            <a href="services.html" class="header__nav-link">OUR SERVICES</a>
-
           </li>
         </ul>
       </nav>
     </header>
 
-    <main class="main">
-      <section
-        class="services-intro fade-in"
-        style="margin-top: 8rem; margin-bottom: 8rem"
+
+  <main
+      class="section-light"
+      style="
+        min-height: 65vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      <div
+        class="form-card fade-in"
+        style="text-align: center; max-width: 550px; margin: 0 auto"
       >
-        <h2>404</h2>
-        <hr class="separation" />
-        <h3>It looks like you might have lost your way.</h3>
-        <p style="margin-bottom: 2rem">
-          The page you are looking for doesn't exist or has been moved. Let's
-          get you back to safe ground.
-        </p>
-        <a
-          href="index.html"
-          class="service-card__link"
+        <!-- Large Cyan Checkmark -->
+        <div
           style="
-            border: 1px solid var(--accent-gold);
-            padding: 10px 20px;
-            border-radius: 4px;
+            color: var(--accent-primary);
+            font-size: 4rem;
+            line-height: 1;
+            margin-bottom: 1rem;
           "
         >
-          &larr; Return to Home
-        </a>
-      </section>
+          &#10004;
+        </div>
+
+        <h2>Message Received!</h2>
+        <p style="margin-bottom: 2rem">
+          Thank you for getting in touch. It's a massive step in the right direction and I look forward to getting to know you.
+        </p>
+
+        <a href="index.html" class="btn btn-primary">Return to Homepage</a>
+      </div>
     </main>
 
     <footer class="footer">
-      <div class="footer__column">
+      <div class="footer__top">
+        <!-- Column 1: Navigation -->
+        <div class="footer__column">
           <h4>Quick Links</h4>
           <ul class="footer__links">
             <li><a href="index.html">Home</a></li>
@@ -122,7 +136,6 @@
               Registered Member of the British Association for Counselling and
               Psychotherapy (BACP)
             </p>
-            <!-- You can drop a small BACP logo image right here later! -->
           </div>
         </div>
       </div>
@@ -142,7 +155,6 @@
         </div>
       </div>
     </footer>
-
     <script src="app.js"></script>
   </body>
 </html>

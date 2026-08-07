@@ -1,7 +1,11 @@
 const express = require("express");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
-require("dotenv").config();
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '.env') });
+
+
+console.log("My SMTP Host is:", process.env.SMTP_HOST);
 
 const app = express();
 app.use(cors());
@@ -19,6 +23,9 @@ const transporter = nodemailer.createTransport({
     pass: process.env.EMAIL_PASS,
   },
 });
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Create the endpoint for your frontend form to talk to
 app.post("/send-email", async (req, res) => {
@@ -38,7 +45,7 @@ app.post("/send-email", async (req, res) => {
     from: `"Pillars Counselling Services" <${process.env.EMAIL_USER}>`, // Makes the sender name look professional
     to: email, // Sends to the email address the user typed in the form
     subject: `Thank you for contacting Pillars Counselling`,
-    text: `Dear ${name},\n\nThank you for contacting Pillars Counselling Services.\n\nThis is an automated reply to confirm that we have securely received your message. We aim to respond to all inquiries within 1-2 business days.\n\n Please note that this inbox is not monitored continuously and should not be used fir urgennt or emergency support. \n\nIf you are experiencing a mental health crisis or are at immediate risk of harm, please contact your kicak emergency services, your GP, or your local mental health crisis service.\n\Thank you for your patience. I look forward to getting back to you soon.\n\nKind Regards, \n\nDaryl Glover \nPillars Counselling Services`,
+    text: `Dear ${name},\n\nThank you for contacting Pillars Counselling Services.\n\nThis is an automated reply to confirm that we have securely received your message. We aim to respond to all inquiries within 1-2 business days.\n\n Please note that this inbox is not monitored continuously and should not be used forr urgent or emergency support. \n\nIf you are experiencing a mental health crisis or are at immediate risk of harm, please contact your local emergency services, your GP, or your local mental health crisis service.\n\Thank you for your patience. I look forward to getting back to you soon.\n\nKind Regards, \n\nDaryl Glover \nPillars Counselling Services`,
   };
 
   try {
@@ -46,8 +53,8 @@ app.post("/send-email", async (req, res) => {
     await transporter.sendMail(mailToBusiness);
     await transporter.sendMail(autoReplyToUser);
 
-    // If both succeed, tell the frontend it worked
-    res.status(200).send("Emails sent successfully!");
+    // Send a 200 OK status back to app.js so it knows it worked
+    res.status(200).send("Success");
   } catch (error) {
     console.error("Error sending emails:", error);
     res.status(500).send("Error sending emails");

@@ -24,6 +24,79 @@
     />
   </head>
 
+  <style>
+    
+    /* Prevent form inputs from spilling out of their container on all screens */
+    .contact-form__input {
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+
+    /* Universal Mobile Fixes for Screen Widths Under 768px */
+    @media (max-width: 767px) {
+      /* 1. Prevent horizontal scrolling and force body to stay contained */
+      body {
+        overflow-x: hidden;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* 2. Center and bound all main containers and boxes so they don't clip off the right */
+      .qualifications-section,
+      .services-master-layout,
+      .signpost-master-layout,
+      .hero-section,
+      .qualifications-box {
+        max-width: 92% !important;
+        width: 92% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        box-sizing: border-box !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
+      }
+
+      /* 3. Fix text overlap issues under images (like in image 4) */
+      .hero-section,
+      .main > section {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+      }
+
+      /* 4. Fix form element widths on mobile (image 2) */
+      form,
+      input,
+      select,
+      textarea,
+      .contact-form {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      h1,
+      h2 {
+        margin-top: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
+      }
+
+      /* Tighten spacing around divider lines */
+      .separation {
+        margin-top: 0.75rem !important;
+        margin-bottom: 0.75rem !important;
+      }
+
+      /* Keep paragraph spacing snug on mobile */
+      p {
+        margin-top: 0 !important;
+        margin-bottom: 0.75rem !important;
+      }
+    }
+  </style>
+
   <body>
     <header class="header">
       <div class="header__logo">
@@ -38,20 +111,26 @@
       <nav class="header__nav">
         <ul class="header__nav-list">
           <li class="header__nav-item">
-            <a href="index.html" class="header__nav-link">HOME</a>
+            <a
+              href="index.html"
+              class="header__nav-link "
+              >HOME</a
+            >
           </li>
           <li class="header__nav-item">
             <a href="aboutme.html" class="header__nav-link">ABOUT ME</a>
           </li>
           <li class="header__nav-item">
-            <a
-              href="contact.html"
-              class="header__nav-link header__nav-link--active"
-              >CONTACT</a
-            >
+            <a class="header__nav-link">RESOURCES</a>
+            <div class="dropdown">
+              <div class="dropdown-content">
+                <a href="signposting.html">Useful Links | Signposting</a>
+                <a href="services.html">Types of Therapy</a>
+              </div>
+            </div>
           </li>
           <li class="header__nav-item">
-            <a href="services.html" class="header__nav-link">OUR SERVICES</a>
+            <a href="contact.html" class="header__nav-link header__nav-link--active">CONTACT</a>
           </li>
         </ul>
       </nav>
@@ -67,7 +146,7 @@
         <div class="hero-content">
           <form
             id="contactForm"
-            action="/send"
+            action="/send-email"
             class="contact-form fade-in"
             method="POST"
           >
@@ -79,11 +158,14 @@
               will be responded to within 72 hours. I look forward to hearing
               from you!
             </h3>
+            
             <div class="contact-form__group">
               <label for="name" class="contact-form__label">Full Name</label>
+              <!-- Added name="name" -->
               <input
                 type="text"
                 id="name"
+                name="name"
                 required
                 class="contact-form__input"
                 placeholder="e.g. John Doe"
@@ -94,9 +176,11 @@
               <label for="email" class="contact-form__label"
                 >Email Address</label
               >
+              <!-- Added name="email" -->
               <input
                 type="email"
                 id="email"
+                name="email"
                 required
                 class="contact-form__input"
                 placeholder="e.g. john@example.com"
@@ -107,16 +191,33 @@
               <label for="message" class="contact-form__label"
                 >How can we help?</label
               >
-              <select id="service" required class="contact-form__input">
-                <option value="" disabled selected>How can we help?</option>
-                <option value="service1">have one service written here</option>
-                <option value="service2">another here</option>
-              </select>
+              <textarea
+                id="message"
+                name="service"
+                rows="5"
+                required
+                class="contact-form__input contact-form__textarea"
+                placeholder="In as many words as you're comfortable with, let me know how I can help."
+              ></textarea>
             </div>
+
+            
+
             <button type="submit" id="submit-btn" class="contact-form__submit">
               Send Message
             </button>
           </form>
+
+          <div class="intake-download-box">
+              <h4>Client Referral Form</h4>
+              <p>
+                To help us understand how we can best support you, please download and complete our referral form. You can email the completed form directly to <strong>info@pillarscounsellingservices.com</strong> or bring it with you to your first session.
+              </p>
+              <a href="files/Referral Form (Edit).pdf" download="Pillars_Referral_Form.pdf" class="btn-download">
+                Download Referral Form (PDF)
+              </a>
+            </div>
+          
 
           <div
             id="success-message"
@@ -144,12 +245,13 @@
         </div>
 
         <div class="hero-image fade-in">
-          <div class="hero__image-wrapper"><img
-            src="images/plant2.jpg"
-            alt="Calming therapy space"
-            class="img-calm hero__image"
-          />
-        </div>
+          <div class="hero__image-wrapper">
+            <img
+              src="images/plant2.jpg"
+              alt="Calming therapy space"
+              class="img-calm hero__image"
+            />
+          </div>
         </div>
       </section>
       <!-- Additional Contact Information Grid -->
@@ -189,8 +291,9 @@
             <h4>What to Expect</h4>
             <p>
               Taking the first step can feel daunting. Once you submit a form,
-              we will reach out within 1-2 business days to schedule a free 15-minute
-              introductory call to ensure we are the right fit for your journey.
+              we will reach out within 1-2 business days to schedule a free
+              15-minute introductory call to ensure we are the right fit for
+              your journey.
             </p>
           </div>
         </div>
@@ -204,9 +307,10 @@
           <ul class="footer__links">
             <li><a href="index.html">Home</a></li>
             <li><a href="aboutme.html">About Me</a></li>
-            <li><a href="services.html">Our Services</a></li>
+            <li><a href="signposting.html">Signposting</a></li>
+            <li><a href="services.html">Types of Therapy</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="privacypolicy.pdf" download>Privacy Policy</a></li>
+            <li><a href="privacypolicy.html">Privacy Policy</a></li>
           </ul>
         </div>
 

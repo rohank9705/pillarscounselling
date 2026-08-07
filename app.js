@@ -26,7 +26,7 @@ faders.forEach(fader => {
 /* =========================================
    Contact Form UI States
    ========================================= */
-const contactForm = document.getElementById('contact-form');
+const contactForm = document.getElementById('contactForm');
 const submitBtn = document.getElementById('submit-btn');
 const successMessage = document.getElementById('success-message');
 
@@ -53,10 +53,8 @@ if (contactForm) {
       });
 
       if (response.ok) {
-        contactForm.style.display = 'none';
-        successMessage.style.display = 'block';
-        
-        successMessage.classList.add('fade-in', 'visible');
+        // Redirect the browser to your custom success page!
+        window.location.href = '/success.html';
       } else {
         throw new Error('Network response was not ok');
       }
@@ -71,3 +69,23 @@ if (contactForm) {
   });
 }
 
+
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdownParents = document.querySelectorAll(".header__nav-item");
+
+  dropdownParents.forEach(item => {
+    const link = item.querySelector(".header__nav-link");
+    const dropdown = item.querySelector(".dropdown");
+
+    if (dropdown && link) {
+      link.addEventListener("click", function (e) {
+        // If we are on mobile screen width, prevent the link from navigating away on the first tap
+        if (window.innerWidth <= 767) {
+          e.preventDefault();
+          // Toggle an 'active' class to show/hide the dropdown
+          item.classList.toggle("active-mobile-dropdown");
+        }
+      });
+    }
+  });
+});
