@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600&family=Playfair+Display:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -131,16 +132,17 @@
     <main class="main">
       <section class="hero-section fade-in">
         <div class="hero__content">
-          <div class="counselling-facts__header">
-            <h2>PILLARS COUNSELLING SERVICES</h2>
+          <div
+            class="counselling-facts__header">
+            <h2 data-aos="fade-right" data-aos-delay="100">PILLARS COUNSELLING SERVICES</h2>
             <ul class="header-title__list">
-              <li>TRUST</li>
-              <li>RESPECT</li>
-              <li>GROWTH</li>
+              <li data-aos="fade-right" data-aos-delay="300">TRUST</li>
+              <li data-aos="fade-right" data-aos-delay="500">RESPECT</li>
+              <li data-aos="fade-right" data-aos-delay="700">GROWTH</li>
             </ul>
           </div>
 
-          <div class="counselling-desc">
+          <div class="counselling-desc" data-aos="fade-right" data-aos-delay="150">
             <p>
               Pillars Counselling Services is a new and growing therapeutic
               service, created with the aim of providing accessible,
@@ -154,7 +156,7 @@
             <hr class="separation" />
           </div>
         </div>
-        <div class="hero__image-wrapper">
+        <div class="hero__image-wrapper" data-aos="fade-left" data-aos-delay="150">
           <img
             src="images/chair.jpg"
             alt="Calming therapy space"
@@ -173,10 +175,10 @@
         </div>
 
         <div class="hero__content">
-          <div class="counselling-facts__header">
+          <div class="counselling-facts__header" data-aos="fade-left" data-aos-delay="150">
             <h2>OUR METHODS</h2>
           </div>
-          <div class="counselling-desc">
+          <div class="counselling-desc" data-aos="fade-left" data-aos-delay="150">
             <p>
               My main therapeutic approach is Cognitive Behavioural Therapy
               (CBT), which focuses on understanding the connection between our
@@ -195,7 +197,7 @@
       </section>
 
       <section class="main">
-        <div class="go-to-contact fade-in">
+        <div class="go-to-contact fade-in" data-aos="fade-up" data-aos-delay="100">
           <h2>WANT TO KNOW MORE?</h2>
         </div>
 
@@ -233,6 +235,7 @@
             <li><a href="services.html">Types of Therapy</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="privacypolicy.html">Privacy Policy</a></li>
+            <li><a href="termsandconditions.html">Terms & Conditions</a></li>
           </ul>
         </div>
 
@@ -273,12 +276,21 @@
             href="https://github.com/rohank9705"
             target="_blank"
             rel="noopener noreferrer"
-            >Rohan</a
+            >RKHN STUDIO</a
           >
         </div>
       </div>
+      
     </footer>
 
     <script src="app.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800 /* Controls how long the animation takes (in milliseconds) */,
+        once: true /* Ensures the animation only plays once as you scroll down */,
+        offset: 100 /* The distance in pixels the element must be in the viewport to trigger */,
+      });
+    </script>
   </body>
 </html>

@@ -11,6 +11,8 @@
       href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600&family=Playfair+Display:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -36,16 +38,6 @@
           padding: 0;
         }
 
-        .services-master-layout,
-        .signpost-master-layout,
-        .hero-section {
-          max-width: 92% !important;
-          width: 92% !important;
-          margin-left: auto !important;
-          margin-right: auto !important;
-          box-sizing: border-box !important;
-        }
-
         /* --- MOBILE HEADER DESIGN --- */
         .header {
           display: flex !important;
@@ -56,9 +48,6 @@
           width: 100% !important;
           box-sizing: border-box !important;
         }
-
-        .header__logo { margin: 0 !important; display: flex; align-items: center; height: 100%; }
-        .header__logo-img { height: 150px !important; width: auto !important; }
 
         .header__nav { display: flex; flex-direction: column; align-items: flex-end !important; }
         .header__nav-list { display: flex; flex-direction: column; align-items: flex-end !important; width: 100%; margin: 0; padding: 0; list-style: none; }
@@ -71,87 +60,94 @@
         .dropdown-content a { text-align: right !important; padding: 0.3rem 0 !important; white-space: normal !important; }
 
         /* --- SPACING FIXES --- */
-        .hero-section, .main > section { padding-top: 2rem !important; padding-bottom: 2rem !important; }
-        form, input, select, textarea, .contact-form { max-width: 100% !important; box-sizing: border-box !important; }
+        .hero-section { padding-top: 2rem !important; padding-bottom: 2rem !important; }
         h1, h2 { margin-top: 0.5rem !important; margin-bottom: 0.5rem !important; }
-        .separation { margin-top: 0.75rem !important; margin-bottom: 0.75rem !important; }
-        p { margin-top: 0 !important; margin-bottom: 0.75rem !important; }
         
-        .qualifications-box h3, .qualifications-box h4, .qualifications-box p { text-align: center !important; }
-
-        /* --- ANDROID/SAMSUNG CARD CENTERING FIX --- */
-        /* Forces the grid into a flex-column so Chromium browsers center it perfectly */
-        .qualifications-section {
-          width: 92% !important;
-          max-width: 92% !important;
-          margin: 0 auto !important;
-          padding-left: 0 !important;
-          padding-right: 0 !important;
-        }
-        .signpost-grid {
-          display: flex !important;
-          flex-direction: column !important;
-          align-items: center !important;
-          width: 100% !important;
-          margin: 0 auto !important;
-        }
-        .signpost-grid .qualifications-box {
-          width: 100% !important;
-          max-width: 100% !important;
-          margin-left: 0 !important;
-          margin-right: 0 !important;
-          padding: 2.5rem 1rem !important;
-        }
-        .emergency-content {
-          display: flex;
-          flex-direction: column;
-          align-items: center !important;
-          gap: 1.5rem;
-          width: 100%;
-        }
+        /* --- MODERN LAYOUT MOBILE FIXES --- */
+        .modern-signpost-wrapper { padding: 0 5% !important; }
+        .emergency-banner { padding: 1.5rem !important; border-radius: 0 0 0 0 !important; border-left: none !important; border-top: 4px solid var(--accent-primary) !important; }
+        .modern-list { grid-template-columns: 1fr !important; }
       }
 
       /* =========================================
-         2. DESKTOP GRID STYLES (Signposting)
+         2. MODERN SIGNPOSTING LAYOUT (Desktop)
          ========================================= */
-      @media (min-width: 768px) {
-        .qualifications-section {
-          max-width: 1200px !important;
-          width: 90% !important;
-          margin: 0 auto !important;
-          box-sizing: border-box;
-          padding-bottom: 4rem;
-          padding-left: 0 !important;
-          padding-right: 0 !important;
-        }
-        .signpost-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 2rem;
-          width: 100%;
-        }
-        .signpost-grid .emergency-card { grid-column: 1 / -1; }
-        .emergency-content {
-          display: grid;
-          grid-template-columns: 1fr 1fr 1fr;
-          gap: 2rem;
-          width: 100%;
-        }
+      .modern-signpost-wrapper {
+        max-width: 1000px;
+        margin: 0 auto 5rem auto;
+        padding: 0 2rem;
       }
 
-      /* Shared Global Card Styles */
-      .signpost-grid .qualifications-box {
-        box-sizing: border-box;
-        margin-bottom: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+      .modern-category {
+        border-bottom: 1px solid rgba(163, 134, 54, 0.2);
+        padding: 2.5rem 0;
       }
-      .signpost-list { list-style: none; padding: 0; margin-top: 1rem; text-align: center; width: 100%; }
-      .signpost-list li { margin-bottom: 0.8rem; font-size: 0.95rem; }
-      .signpost-list a { color: var(--color-heading); text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
-      .signpost-list a:hover { color: var(--accent-tertiary); }
+
+      .modern-category:last-child {
+        border-bottom: none;
+      }
+
+      .modern-category h3 {
+        color: var(--accent-primary);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .modern-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem 2rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .modern-list li {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.95rem;
+        color: var(--color-text);
+        line-height: 1.6;
+      }
+
+      .modern-list strong {
+        color: var(--color-heading);
+        display: block;
+        margin-bottom: 0.2rem;
+      }
+
+      .modern-list a {
+        color: var(--accent-primary);
+        text-decoration: none;
+        transition: var(--transition-smooth);
+      }
+
+      .modern-list a:hover {
+        color: var(--accent-secondary);
+      }
+
+      /* Emphasized Emergency Section */
+      .emergency-banner {
+        background-color: rgba(192, 158, 64, 0.1);
+        border-left: 4px solid var(--accent-primary);
+        padding: 2.5rem;
+        margin-bottom: 3rem;
+        border-radius: 0 12px 12px 0;
+      }
+
+      .emergency-banner h3 {
+        color: var(--color-heading);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+      }
+      
+      .emergency-banner p {
+        font-family: 'Lora', serif;
+        color: var(--color-text);
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
     </style>
 
   <body>
@@ -169,11 +165,7 @@
       <nav class="header__nav">
         <ul class="header__nav-list">
           <li class="header__nav-item">
-            <a
-              href="index.html"
-              class="header__nav-link"
-              >HOME</a
-            >
+            <a href="index.html" class="header__nav-link">HOME</a>
           </li>
           <li class="header__nav-item">
             <a href="aboutme.html" class="header__nav-link">ABOUT ME</a>
@@ -194,340 +186,170 @@
       </nav>
     </header>
 
-    <section class="main">
+    <main class="main" data-aos="fade-up" data-aos-delay="150">
       <!-- Centered Introduction -->
       <section
         class="hero-section fade-in"
         style="
           display: flex;
           flex-direction: column;
-          align-items: center !important;
+          align-items: center;
           text-align: center;
-          padding: 1rem 2rem 1rem; /* Dropped from 8rem to 3rem */
-          min-height: auto !important; /* Stops the section from stretching down the screen */
+          padding: 3rem 2rem 1rem;
           width: 100%;
+          box-sizing: border-box;
         "
       >
-        <h1 style="text-align: center; margin-top: 0; margin-bottom: 1rem">
+        <h1 style="text-align: center; margin-top: 0; margin-bottom: 1rem" >
           Signposting & Useful Support
         </h1>
-        <div
-          style="
-            max-width: 800px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-          "
-        >
-          <p
-            style="
-              margin-top: 0;
-              margin-bottom: 0.5rem;
-              text-align: center !important;
-              width: 100%;
-            "
-          >
+        <div style="max-width: 800px; width: 100%;">
+          <p style="margin-bottom: 0.5rem;">
             Sometimes the right support extends beyond counselling. Whether
             you're looking for immediate help, specialist advice, or support for
             a particular issue, the organisations below may be helpful.
           </p>
-          <p
-            style="
-              margin-top: 0;
-              margin-bottom: 10;
-              text-align: center !important;
-              width: 100%;
-            "
-          >
+          <p style="margin-bottom: 2rem;">
             If you're unsure which service is right for you, please don't
             hesitate to ask.
           </p>
         </div>
       </section>
 
-      <!-- Resources Grid Section (fade-in restored) -->
-      <section class="qualifications-section">
-        <style>
-          /* 1. Force the parent wrapper to expand and remove inherited side padding */
-          .qualifications-section {
-            max-width: 1200px !important;
-            width: 90% !important;
-            margin: 0 auto !important;
-            box-sizing: border-box;
-            padding-bottom: 4rem;
-            padding-left: 0 !important; /* Overrides the 1.5rem padding from style.css */
-            padding-right: 0 !important;
-          }
-
-          /* 2. Grid setup */
-          .signpost-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            width: 100%;
-            justify-items: center; /* Forces the cards into the true center */
-          }
-
-          /* 3. Cards fill their column and center their content */
-          .signpost-grid .qualifications-box {
-            max-width: 100% !important;
-            width: 100% !important;
-            box-sizing: border-box;
-            margin-bottom: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Centers the content blocks */
-            text-align: center; /* Centers the text */
-          }
-
-          .signpost-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 1rem;
-            text-align: center; /* Ensures all list items are centered */
-            width: 100%;
-          }
-
-          .signpost-list li {
-            margin-bottom: 0.8rem;
-            font-size: 0.95rem;
-          }
-
-          .signpost-list a {
-            color: var(--color-heading);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-          }
-
-          .signpost-list a:hover {
-            color: var(--accent-tertiary);
-          }
-
-          /* 4. Desktop Layout */
-          @media (min-width: 768px) {
-            .signpost-grid {
-              grid-template-columns: repeat(2, 1fr);
-            }
-
-            /* Make the emergency card span full width at the top */
-            .signpost-grid .emergency-card {
-              grid-column: 1 / -1;
-            }
-
-            .emergency-content {
-              display: grid;
-              grid-template-columns: 1fr 1fr 1fr;
-              gap: 2rem;
-              width: 100%;
-            }
-          }
-
-          /* 5. Mobile Layout specifically for the Emergency Card Content */
-          @media (max-width: 767px) {
-            .emergency-content {
-              display: flex;
-              flex-direction: column;
-              align-items: center !important; /* Centers Samaritans, NHS 24, etc. */
-              gap: 1.5rem;
-              width: 100%;
-            }
-          }
-        </style>
-
-        <div class="signpost-grid">
-          <!-- EMERGENCY CARD (Full Width - Thinned border to 2px) -->
-          <div
-            class="qualifications-box emergency-card"
-            style="border-left: 1px solid var(--accent-primary)"
-          >
-            <h3 style="color: var(--color-heading); margin-bottom: 1rem">
-              Out of Hours / Immediate Help
-            </h3>
-            <p style="line-height: 1.6; margin-bottom: 1.5rem">
-              Please note that we are not an emergency or crisis service. If you
-              are experiencing a mental health crisis, help can be sought from:
-            </p>
-
-            <div class="emergency-content">
-              <div>
-                <h4 style="margin-bottom: 0.5rem; color: var(--color-heading)">
-                  Samaritans Scotland
-                </h4>
-                <ul class="signpost-list">
-                  <li>📞 <a href="tel:116123">116 123</a></li>
-                  <li>
-                    ✉️ <a href="mailto:jo@samaritans.org">jo@samaritans.org</a>
-                  </li>
-                  <li>
-                    🌐
-                    <a
-                      href="https://www.samaritans.org"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >samaritans.org</a
-                    >
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 style="margin-bottom: 0.5rem; color: var(--color-heading)">
-                  Breathing Space
-                </h4>
-                <ul class="signpost-list">
-                  <li>📞 <a href="tel:0800838587">0800 838 587</a></li>
-                  <li>
-                    🌐
-                    <a
-                      href="https://breathingspace.scot"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >breathingspace.scot</a
-                    >
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 style="margin-bottom: 0.5rem; color: var(--color-heading)">
-                  Medical Emergencies
-                </h4>
-                <ul class="signpost-list">
-                  <li>
-                    📞 <strong>NHS 24:</strong> <a href="tel:111">Call 111</a>
-                  </li>
-                  <li>
-                    ⚠️ <strong>Emergency:</strong>
-                    <a href="tel:999">Call 999</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- REGULAR CARDS -->
-          <div class="qualifications-box">
-            <h3 style="color: var(--color-heading); margin-bottom: 1rem">
-              General Mental Health Support
-            </h3>
-            <ul class="signpost-list">
-              <li>
-                <strong>Scottish Action for Mental Health (SAMH)</strong><br />
-                🌐
-                <a
-                  href="https://www.samh.org.uk"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >samh.org.uk</a
-                >
-              </li>
-              <li style="margin-top: 1rem">
-                <strong>Change Mental Health</strong><br />
-                🌐
-                <a
-                  href="https://changemh.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >changemh.org</a
-                >
-              </li>
-              <li style="margin-top: 1rem">
-                <strong>Mind UK</strong><br />
-                🌐
-                <a
-                  href="https://www.mind.org.uk"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >mind.org.uk</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <div class="qualifications-box">
-            <h3 style="color: var(--color-heading); margin-bottom: 1rem">
-              LGBTQ+ Support
-            </h3>
-            <ul class="signpost-list">
-              <li>
-                <strong>LGBT Youth Scotland</strong><br />
-                📞 <a href="tel:08088010432">0808 801 0432</a><br />
-                🌐
-                <a
-                  href="https://www.lgbtyouth.org.uk"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >lgbtyouth.org.uk</a
-                >
-              </li>
-              <li style="margin-top: 1rem">
-                <strong>Galop - Survivors of Abuse</strong><br />
-                📞 <a href="tel:08009995428">0800 999 5428</a>
-              </li>
-              <li style="margin-top: 1rem">
-                <strong>LGBT Switchboard</strong><br />
-                📞 <a href="tel:08000119100">0800 0119 100</a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="qualifications-box">
-            <h3 style="color: var(--color-heading); margin-bottom: 1rem">
-              Eating Disorder Help
-            </h3>
-            <ul class="signpost-list">
-              <li>
-                <strong>Beat Eating Disorders</strong><br />
-                📞 <a href="tel:08088010432">0808 801 0432</a><br />
-                ✉️
-                <a href="mailto:scotlandhelp@beateatingdisorders.org.uk"
-                  >scotlandhelp@beateatingdisorders.org.uk</a
-                >
-              </li>
-              <li style="margin-top: 1rem">
-                <strong>Talking ED's</strong><br />
-                ✉️
-                <a href="mailto:support@eatingdisorderscotland.co.uk"
-                  >support@eatingdisorderscotland.co.uk</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <div class="qualifications-box">
-            <h3 style="color: var(--color-heading); margin-bottom: 1rem">
-              Children & Young People
-            </h3>
-            <ul class="signpost-list">
-              <li>
-                <strong>Childline</strong><br />
-                📞 <a href="tel:08001111">0800 1111</a><br />
-                🌐
-                <a
-                  href="https://www.childline.org.uk"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >childline.org.uk</a
-                >
-              </li>
-              <li style="margin-top: 1rem">
-                <strong>Children 1st</strong><br />
-                📞 <a href="tel:08000282233">08000 28 22 33</a><br />
-                🌐
-                <a
-                  href="https://www.children1st.org.uk"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >children1st.org.uk</a
-                >
-              </li>
-            </ul>
-          </div>
+      <!-- Modern Minimalist Signposting List -->
+      <div class="modern-signpost-wrapper">
+        
+        <!-- Emergency Banner -->
+        <div class="emergency-banner">
+          <h3>Out of Hours / Immediate Help</h3>
+          <p>Please note that we are not an emergency or crisis service. If you are experiencing a mental health crisis, help can be sought from:</p>
+          
+          <ul class="modern-list">
+            <li><strong>Samaritans Scotland</strong> 📞 <a href="tel:116123">116 123</a><br> 🌐 <a href="https://www.samaritans.org" target="_blank" rel="noopener noreferrer">samaritans.org</a></li>
+            <li><strong>Breathing Space</strong> 📞 <a href="tel:0800838587">0800 83 85 87</a><br> 🌐 <a href="https://breathingspace.scot" target="_blank" rel="noopener noreferrer">breathingspace.scot</a></li>
+            <li><strong>Medical Emergencies</strong> 📞 NHS 24: <a href="tel:111">Call 111</a><br> ⚠️ Emergency: <a href="tel:999">Call 999</a></li>
+          </ul>
         </div>
-      </section>
-    </section>
+
+        <div class="modern-category">
+          <h3>General Mental Health</h3>
+          <ul class="modern-list">
+            <li><strong>Mind</strong> <a href="tel:03001233393">0300 123 3393</a></li>
+            <li><strong>Shout</strong> Text SHOUT to 85258</li>
+            <li><strong>Breathing Space Scotland</strong> <a href="tel:0800838587">0800 83 85 87</a></li>
+            <li><strong>Lifeline NI</strong> <a href="tel:08088088000">0808 808 8000</a></li>
+          </ul>
+        </div>
+
+        <div class="modern-category">
+          <h3>Domestic Abuse</h3>
+          <ul class="modern-list">
+            <li><strong>Rape Crisis England & Wales</strong> <a href="tel:08085002222">0808 500 2222</a></li>
+            <li><strong>Rape Crisis Scotland</strong> <a href="tel:08088010302">08088 01 03 02</a></li>
+            <li><strong>Rape Crisis NI</strong> <a href="tel:08000246991">0800 0246 991</a></li>
+            <li><strong>Welsh Women's Aid</strong> <a href="tel:08088010800">0808 80 10 800</a></li>
+            <li><strong>Refuge</strong> <a href="tel:08082000247">0808 2000 247</a><br> 🌐 <a href="https://refuge.org.uk/" target="_blank" rel="noopener noreferrer">refuge.org.uk</a></li>
+            <li><strong>Men's Advice Line</strong> <a href="tel:08088010327">0808 801 0327</a></li>
+            <li><strong>Scottish Domestic Abuse & Forced Marriage Helpline</strong> <a href="tel:08000271234">0800 027 1234</a><br> 🌐 <a href="http://www.sdafmh.org.uk" target="_blank" rel="noopener noreferrer">sdafmh.org.uk</a></li>
+          </ul>
+        </div>
+
+        <div class="modern-category">
+          <h3>Children & Young People</h3>
+          <ul class="modern-list">
+            <li><strong>Childline</strong> <a href="tel:08001111">0800 1111</a></li>
+            <li><strong>The Mix</strong> <a href="tel:08088084994">0808 808 4994</a></li>
+            <li><strong>YoungMinds Parents Helpline</strong> <a href="tel:08088025544">0808 802 5544</a></li>
+          </ul>
+        </div>
+
+        <div class="modern-category">
+          <h3>Housing & Homelessness</h3>
+          <ul class="modern-list">
+            <li><strong>Shelter England</strong> <a href="tel:08088004444">0808 800 4444</a></li>
+            <li><strong>Shelter Scotland</strong> <a href="tel:08088004444">0808 800 4444</a></li>
+            <li><strong>Shelter Cymru</strong> <a href="tel:08000495495">08000 495 495</a></li>
+            <li><strong>Shelter NI</strong> <a href="tel:02890247752">028 9024 7752</a></li>
+          </ul>
+        </div>
+
+        <div class="modern-category">
+          <h3>Alcohol & Drug Support</h3>
+          <ul class="modern-list">
+            <li><strong>AA UK</strong> <a href="tel:08009177650">0800 9177 650</a></li>
+            <li><strong>NA UK</strong> <a href="tel:03009991212">0300 999 1212</a></li>
+            <li><strong>FRANK</strong> <a href="tel:03001236600">0300 123 6600</a></li>
+            <li><strong>SFAD</strong> <a href="tel:08080101011">08080 10 10 11</a></li>
+            <li><strong>GamCare</strong> <a href="tel:08088020133">0808 8020 133</a></li>
+          </ul>
+        </div>
+
+        <div class="modern-category">
+          <h3>Debt, Benefits & Financial Support</h3>
+          <ul class="modern-list">
+            <li><strong>Citizens Advice — England</strong> <a href="tel:08001448848">0800 144 8848</a></li>
+            <li><strong>Citizens Advice Scotland</strong> <a href="tel:08000281456">0800 028 1456</a></li>
+            <li><strong>Citizens Advice Cymru</strong> <a href="tel:08007022020">0800 702 2020</a></li>
+            <li><strong>National Debtline</strong> <a href="tel:08088084000">0808 808 4000</a></li>
+          </ul>
+        </div>
+
+        <div class="modern-category">
+          <h3>Employment & Workplace</h3>
+          <ul class="modern-list">
+            <li><strong>Acas</strong> <a href="tel:03001231100">0300 123 1100</a></li>
+            <li><strong>Working Families</strong> <a href="tel:03000120312">0300 012 0312</a></li>
+            <li><strong>EASS</strong> <a href="tel:08088000082">0808 800 0082</a></li>
+          </ul>
+        </div>
+
+        <div class="modern-category">
+          <h3>Veterans & Armed Forces</h3>
+          <ul class="modern-list">
+            <li><strong>Combat Stress</strong> <a href="tel:08001381619">0800 138 1619</a></li>
+            <li><strong>SSAFA Forcesline</strong> <a href="tel:08002606767">0800 260 6767</a></li>
+            <li><strong>Veterans' Gateway</strong> <a href="tel:08088021212">0808 802 1212</a></li>
+          </ul>
+        </div>
+
+        <div class="modern-category">
+          <h3>Eating Disorders</h3>
+          <ul class="modern-list">
+            <li><strong>Beat (Eng)</strong> <a href="tel:08088010677">0808 801 0677</a></li>
+            <li><strong>Beat (Scot)</strong> <a href="tel:08088010432">0808 801 0432</a></li>
+            <li><strong>Beat (Wales)</strong> <a href="tel:08088010433">0808 801 0433</a></li>
+            <li><strong>Beat (NI)</strong> <a href="tel:08088010434">0808 801 0434</a></li>
+          </ul>
+        </div>
+
+        <div class="modern-category">
+          <h3>LGBTQ+ Support</h3>
+          <ul class="modern-list">
+            <li><strong>Switchboard LGBT+</strong> <a href="tel:03003300630">0300 330 0630</a></li>
+            <li><strong>LGBT Health & Wellbeing</strong> <a href="tel:03001232523">0300 123 2523</a></li>
+          </ul>
+        </div>
+
+        <!-- Abbreviations Guide -->
+        <div class="modern-category" style="margin-top: 2rem; background-color: var(--bg-surface); padding: 2.5rem; border-radius: 12px; border-bottom: none;">
+          <h3>Abbreviations Guide</h3>
+          <ul class="modern-list" style="grid-template-columns: 1fr;">
+            <li><strong>LGBTQ+</strong> Lesbian, Gay, Bisexual, Transgender, Queer and other identities</li>
+            <li><strong>EASS</strong> Equality Advisory Support Service</li>
+            <li><strong>SFAD</strong> Scottish Families Affected by Alcohol & Drugs</li>
+            <li><strong>AA</strong> Alcoholics Anonymous</li>
+            <li><strong>NA</strong> Narcotics Anonymous</li>
+            <li><strong>Beat</strong> Beat is the organisation's name rather than an abbreviation</li>
+            <li><strong>Acas</strong> Advisory, Conciliation and Arbitration Service</li>
+            <li><strong>NIHE</strong> Northern Ireland Housing Executive</li>
+            <li><strong>SSAFA</strong> Soldiers, Sailors, Airmen and Families Association</li>
+            <li><strong>PTSD</strong> Post-Traumatic Stress Disorder</li>
+            <li><strong>AMIS</strong> Abused Men in Scotland</li>
+          </ul>
+        </div>
+
+      </div>
+    </main>
 
     <footer class="footer">
       <div class="footer__top">
@@ -541,6 +363,7 @@
             <li><a href="services.html">Types of Therapy</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="privacypolicy.html">Privacy Policy</a></li>
+            <li><a href="termsandconditions.html">Terms & Conditions</a></li>
           </ul>
         </div>
 
@@ -580,12 +403,36 @@
             href="https://github.com/rohank9705"
             target="_blank"
             rel="noopener noreferrer"
-            >Rohan</a
+            >RKHN STUDIO</a
           >
         </div>
       </div>
     </footer>
 
     <script src="app.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const dropdownParents = document.querySelectorAll(".header__nav-item");
+        dropdownParents.forEach(item => {
+          const link = item.querySelector(".header__nav-link");
+          const dropdown = item.querySelector(".dropdown");
+          if (dropdown && link) {
+            link.addEventListener("click", function (e) {
+              if (window.innerWidth <= 767) {
+                item.classList.toggle("active-mobile-dropdown");
+              }
+            });
+          }
+        });
+      });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800 /* Controls how long the animation takes (in milliseconds) */,
+        once: true /* Ensures the animation only plays once as you scroll down */,
+        offset: 100 /* The distance in pixels the element must be in the viewport to trigger */,
+      });
+    </script>
   </body>
 </html>

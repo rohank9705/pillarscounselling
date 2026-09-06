@@ -3,8 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Couselling Services</title>
+    <title>Contact | Pillars Counselling</title>
     <link rel="stylesheet" href="style.css" />
+    
+    <!-- ADDED: AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,7 +29,6 @@
   </head>
 
   <style>
-    
     /* Prevent form inputs from spilling out of their container on all screens */
     .contact-form__input {
       width: 100% !important;
@@ -33,10 +36,8 @@
       box-sizing: border-box !important;
     }
 
-
     /* Universal Mobile Fixes for Screen Widths Under 768px */
     @media (max-width: 767px) {
-      /* 1. Prevent horizontal scrolling and force body to stay contained */
       body {
         overflow-x: hidden;
         width: 100%;
@@ -44,7 +45,6 @@
         padding: 0;
       }
 
-      /* 2. Center and bound all main containers and boxes so they don't clip off the right */
       .qualifications-section,
       .services-master-layout,
       .signpost-master-layout,
@@ -60,14 +60,12 @@
         transform: none !important;
       }
 
-      /* 3. Fix text overlap issues under images (like in image 4) */
       .hero-section,
       .main > section {
         padding-top: 2rem !important;
         padding-bottom: 2rem !important;
       }
 
-      /* 4. Fix form element widths on mobile (image 2) */
       form,
       input,
       select,
@@ -83,13 +81,11 @@
         margin-bottom: 0.5rem !important;
       }
 
-      /* Tighten spacing around divider lines */
       .separation {
         margin-top: 0.75rem !important;
         margin-bottom: 0.75rem !important;
       }
 
-      /* Keep paragraph spacing snug on mobile */
       p {
         margin-top: 0 !important;
         margin-bottom: 0.75rem !important;
@@ -111,11 +107,7 @@
       <nav class="header__nav">
         <ul class="header__nav-list">
           <li class="header__nav-item">
-            <a
-              href="index.html"
-              class="header__nav-link "
-              >HOME</a
-            >
+            <a href="index.html" class="header__nav-link">HOME</a>
           </li>
           <li class="header__nav-item">
             <a href="aboutme.html" class="header__nav-link">ABOUT ME</a>
@@ -130,178 +122,105 @@
             </div>
           </li>
           <li class="header__nav-item">
-            <a href="contact.html" class="header__nav-link header__nav-link--active">CONTACT</a>
+            <a
+              href="contact.html"
+              class="header__nav-link header__nav-link--active"
+              >CONTACT</a
+            >
           </li>
         </ul>
       </nav>
     </header>
 
-    <main class="main">
-      <section class="fade-in">
-        <div>
-          <h1>CONTACT US</h1>
-        </div>
+    <!-- FIXED: Added box-sizing and overflow-x: clip -->
+    <main class="main" style="padding-top: 0; width: 100%; box-sizing: border-box; overflow-x: clip;">
+      
+      <!-- Premium Hero Image Banner -->
+      <section class="contact-banner-wrapper" data-aos="fade-down" data-aos-duration="1000">
+        <img
+          src="images/plant2.jpg"
+          alt="Calming therapy space"
+          class="contact-banner-img"
+        />
       </section>
-      <section class="hero-section">
-        <div class="hero-content">
-          <form
-            id="contactForm"
-            action="/send-email"
-            class="contact-form fade-in"
-            method="POST"
-          >
-            <h2>GET IN TOUCH</h2>
-            <hr class="separation" />
 
-            <h3>
-              Fill out our contact form below to ping me an email. All enquiries
-              will be responded to within 72 hours. I look forward to hearing
-              from you!
-            </h3>
-            
-            <div class="contact-form__group">
-              <label for="name" class="contact-form__label">Full Name</label>
-              <!-- Added name="name" -->
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                class="contact-form__input"
-                placeholder="e.g. John Doe"
-              />
-            </div>
+      <!-- Split Layout: Info on Left, Form on Right -->
+      <section class="contact-split-layout">
+        
+        <!-- LEFT COLUMN: Contact Details (No Cards) -->
+        <div class="contact-info-side" data-aos="fade-right" data-aos-delay="200">
+          <h1 style="font-size: 2.8rem; margin-bottom: 1rem; margin-top: 0;">Let's Connect</h1>
+          <p style="font-size: 1.1rem; color: var(--color-text); margin-bottom: 3rem; max-width: 90%;">
+            Taking the first step can feel daunting. Reach out below, and we will respond within 1-2 business days to schedule a free 15-minute introductory call.
+          </p>
 
-            <div class="contact-form__group">
-              <label for="email" class="contact-form__label"
-                >Email Address</label
-              >
-              <!-- Added name="email" -->
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                class="contact-form__input"
-                placeholder="e.g. john@example.com"
-              />
-            </div>
-
-            <div class="contact-form__group">
-              <label for="message" class="contact-form__label"
-                >How can we help?</label
-              >
-              <textarea
-                id="message"
-                name="service"
-                rows="5"
-                required
-                class="contact-form__input contact-form__textarea"
-                placeholder="In as many words as you're comfortable with, let me know how I can help."
-              ></textarea>
-            </div>
-
-            
-
-            <button type="submit" id="submit-btn" class="contact-form__submit">
-              Send Message
-            </button>
-          </form>
-
-          <div class="intake-download-box">
-              <h4>Client Referral Form</h4>
-              <p>
-                To help us understand how we can best support you, please download and complete our referral form. You can email the completed form directly to <strong>info@pillarscounsellingservices.com</strong> or bring it with you to your first session.
-              </p>
-              <a href="files/Referral Form (Edit).pdf" download="Pillars_Referral_Form.pdf" class="btn-download">
-                Download Referral Form (PDF)
-              </a>
-            </div>
-          
-
-          <div
-            id="success-message"
-            style="display: none; text-align: center; padding: 2rem 0"
-          >
-            <h4
-              style="
-                font-family: &quot;Lora&quot;, serif;
-                color: var(--color-heading);
-                margin-bottom: 1rem;
-              "
-            >
-              Message Sent Successfully
-            </h4>
-            <p
-              style="
-                font-family: &quot;Inter&quot;, sans-serif;
-                color: var(--color-text);
-              "
-            >
-              Thank you for reaching out. Your message has been received
-              securely, and we will be in touch within 1-2 business days.
-            </p>
-          </div>
-        </div>
-
-        <div class="hero-image fade-in">
-          <div class="hero__image-wrapper">
-            <img
-              src="images/plant2.jpg"
-              alt="Calming therapy space"
-              class="img-calm hero__image"
-            />
-          </div>
-        </div>
-      </section>
-      <!-- Additional Contact Information Grid -->
-      <section class="contact-extras fade-in">
-        <div class="contact-grid">
-          <!-- Card 1: Direct Contact -->
-          <div class="contact-card">
+          <div class="minimal-info-block" data-aos="fade-up" data-aos-delay="300">
             <h4>Direct Contact</h4>
             <p>
-              <strong>Email:</strong><br />
-              <a href="mailto:email@example.com">email@example.com</a>
-            </p>
-            <p>
-              <strong>Phone:</strong><br />
-              <a href="tel:+447368966534">07495 321117</a>
+              <a href="mailto:info@pillarscounsellingservices.com">info@pillarscounsellingservices.com</a><br />
+              <a href="tel:+447368966534">07599 931118</a>
             </p>
           </div>
 
-          <!-- Card 2: Location & Hours -->
-          <div class="contact-card">
+          <div class="minimal-info-block" data-aos="fade-up" data-aos-delay="400">
             <h4>Location & Hours</h4>
             <p>
-              <strong>Clinic Address:</strong><br />
-              <a
-                href="https://www.google.com/maps/place/54+Fruin+Ave,+Newton+Mearns,+Glasgow+G77+6JA/data=!4m2!3m1!1s0x488847e2b7d73867:0xec4c9f2736830bd7?sa=X&ved=1t:242&ictx=111"
-                >Address here (example link)</a
-              ><br />Glasgow, G1 1AA
-            </p>
-            <p>
-              <strong>Operating Hours:</strong><br />
+              Glasgow, G1 1AA<br />
               Mon - Fri: 9:00 AM - 6:00 PM
             </p>
           </div>
 
-          <!-- Card 3: What to Expect -->
-          <div class="contact-card">
-            <h4>What to Expect</h4>
-            <p>
-              Taking the first step can feel daunting. Once you submit a form,
-              we will reach out within 1-2 business days to schedule a free
-              15-minute introductory call to ensure we are the right fit for
-              your journey.
+          <div class="minimal-info-block" data-aos="fade-up" data-aos-delay="500">
+            <h4>Client Referral Form</h4>
+            <p style="font-size: 0.95rem; margin-bottom: 1rem;">
+              If you’d like to take some time to consider whether counselling is right for you, you can
+              download and complete our client referral form at a time that feels comfortable for you. Once
+              completed, you can email it to <a href="mailto:info@pillarscounsellingservices.com">info@pillarscounsellingservices.com</a>.
             </p>
+            <a href="files/Referral Form (Edit).pdf" download="Pillars_Referral_Form.pdf" class="btn-download">
+              Download PDF
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: Premium Form -->
+        <div class="contact-form-side" data-aos="fade-left" data-aos-delay="400">
+          <form id="contactForm" action="/send-email" class="premium-form" method="POST">
+            <h2 style="margin-top: 0; margin-bottom: 2rem; font-size: 1.8rem;">Send a Message</h2>
+            
+            <div class="form-row">
+              <div class="premium-form__group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required placeholder="e.g. John Doe" />
+              </div>
+              
+              <div class="premium-form__group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="e.g. john@example.com" />
+              </div>
+            </div>
+
+            <div class="premium-form__group">
+              <label for="message">How can we help?</label>
+              <textarea id="message" name="service" rows="5" required placeholder="In as many words as you're comfortable with, let me know how I can help."></textarea>
+            </div>
+
+            <button type="submit" id="submit-btn" class="premium-form__submit">
+              Send Message
+            </button>
+          </form>
+
+          <!-- Success Message -->
+          <div id="success-message" style="display: none; text-align: center; padding: 2rem 0;">
+            <h4 style="color: var(--color-heading); margin-bottom: 1rem;">Message Sent Successfully</h4>
+            <p style="color: var(--color-text);">Thank you for reaching out. We will be in touch shortly.</p>
           </div>
         </div>
       </section>
     </main>
+    
     <footer class="footer">
       <div class="footer__top">
-        <!-- Column 1: Navigation -->
         <div class="footer__column">
           <h4>Quick Links</h4>
           <ul class="footer__links">
@@ -311,10 +230,10 @@
             <li><a href="services.html">Types of Therapy</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="privacypolicy.html">Privacy Policy</a></li>
+            <li><a href="termsandconditions.html">Terms & Conditions</a></li>
           </ul>
         </div>
 
-        <!-- Column 2: Crisis Support -->
         <div class="footer__column">
           <h4>Need Immediate Help?</h4>
           <p>
@@ -328,7 +247,6 @@
           </ul>
         </div>
 
-        <!-- Column 3: Trust Badge -->
         <div class="footer__column">
           <h4>Professional Affiliation</h4>
           <div class="footer__badge">
@@ -336,12 +254,10 @@
               Registered Member of the British Association for Counselling and
               Psychotherapy (BACP)
             </p>
-            <!-- You can drop a small BACP logo image right here later! -->
           </div>
         </div>
       </div>
 
-      <!-- Bottom Bar: Copyright & Credit -->
       <div class="footer__bottom">
         <p>&copy; 2026 Pillars Counselling Services. All rights reserved.</p>
 
@@ -351,11 +267,22 @@
             href="https://github.com/rohank9705"
             target="_blank"
             rel="noopener noreferrer"
-            >Rohan</a
+            >RKHN STUDIO</a
           >
         </div>
       </div>
     </footer>
+    
     <script src="app.js"></script>
+
+    <!-- ADDED: AOS Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
+      });
+    </script>
   </body>
 </html>

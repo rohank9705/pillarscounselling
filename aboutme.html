@@ -3,8 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Couselling Services</title>
+    <title>About Me | Pillars Counselling</title>
+    
+    <!-- CSS Links -->
     <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,76 +22,70 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;700;800&display=swap"
       rel="stylesheet"
     />
+    
+    <!-- Favicon -->
     <link
       rel="icon"
       type="image/png"
       href="images/Untitled_design-removebg-preview.png"
     />
+
+    <style>
+      /* Universal Mobile Fixes for Screen Widths Under 768px */
+      @media (max-width: 767px) {
+        /* 1. Prevent horizontal scrolling and force body to stay contained */
+        body {
+          overflow-x: hidden;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        /* 2. Center and bound all main containers and boxes so they don't clip off the right */
+        .qualifications-section,
+        .services-master-layout,
+        .signpost-master-layout,
+        .qualifications-box {
+          max-width: 92% !important;
+          width: 92% !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          box-sizing: border-box !important;
+          left: auto !important;
+          right: auto !important;
+          transform: none !important;
+        }
+
+        /* 3. Fix form element widths on mobile */
+        form,
+        input,
+        select,
+        textarea,
+        .contact-form {
+          max-width: 100% !important;
+          box-sizing: border-box !important;
+        }
+
+        h1,
+        h2 {
+          margin-top: 0.5rem !important;
+          margin-bottom: 0.5rem !important;
+        }
+
+        /* Tighten spacing around divider lines */
+        .separation {
+          margin-top: 0.75rem !important;
+          margin-bottom: 0.75rem !important;
+        }
+
+        /* Keep paragraph spacing snug on mobile */
+        p {
+          margin-top: 0 !important;
+          margin-bottom: 0.75rem !important;
+        }
+      }
+    </style>
   </head>
-
-  <style>
-    /* Universal Mobile Fixes for Screen Widths Under 768px */
-    @media (max-width: 767px) {
-      /* 1. Prevent horizontal scrolling and force body to stay contained */
-      body {
-        overflow-x: hidden;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-      }
-
-      /* 2. Center and bound all main containers and boxes so they don't clip off the right */
-      .qualifications-section,
-      .services-master-layout,
-      .signpost-master-layout,
-      .hero-section,
-      .qualifications-box {
-        max-width: 92% !important;
-        width: 92% !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        box-sizing: border-box !important;
-        left: auto !important;
-        right: auto !important;
-        transform: none !important;
-      }
-
-      /* 3. Fix text overlap issues under images (like in image 4) */
-      .hero-section,
-      .main > section {
-        padding-top: 2rem !important;
-        padding-bottom: 2rem !important;
-      }
-
-      /* 4. Fix form element widths on mobile (image 2) */
-      form,
-      input,
-      select,
-      textarea,
-      .contact-form {
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-      }
-
-      h1,
-      h2 {
-        margin-top: 0.5rem !important;
-        margin-bottom: 0.5rem !important;
-      }
-
-      /* Tighten spacing around divider lines */
-      .separation {
-        margin-top: 0.75rem !important;
-        margin-bottom: 0.75rem !important;
-      }
-
-      /* Keep paragraph spacing snug on mobile */
-      p {
-        margin-top: 0 !important;
-        margin-bottom: 0.75rem !important;
-      }
-    }
-  </style>
 
   <body>
     <header class="header">
@@ -103,11 +102,7 @@
       <nav class="header__nav">
         <ul class="header__nav-list">
           <li class="header__nav-item">
-            <a
-              href="index.html"
-              class="header__nav-link"
-              >HOME</a
-            >
+            <a href="index.html" class="header__nav-link">HOME</a>
           </li>
           <li class="header__nav-item">
             <a href="aboutme.html" class="header__nav-link header__nav-link--active">ABOUT ME</a>
@@ -130,9 +125,10 @@
 
     <section class="main">
       <!-- Biography Section -->
-      <section class="hero-section fade-in">
-        <!-- LEFT COLUMN: Image -->
-        <div class="hero__image-wrapper">
+      <section class="hero-section" style="align-items: start;">
+        
+        <!-- LEFT COLUMN: Image (Slides in from the left) -->
+        <div class="hero__image-wrapper" data-aos="fade-right">
           <img
             src="images/Gemini_Generated_Image_.png"
             alt="Portrait of the Counsellor"
@@ -140,9 +136,9 @@
           />
         </div>
 
-        <!-- RIGHT COLUMN: Text -->
-        <div class="hero__content">
-          <h2>About Me</h2>
+        <!-- RIGHT COLUMN: Text (Slides in from the right) -->
+        <div class="hero__content" style="justify-content: flex-start;" data-aos="fade-left">
+          <h2 style="margin-top: 0;">About Me</h2>
           <hr class="separation" />
           <h3>
             Creating a safe, non-judgmental space for your healing journey.
@@ -162,8 +158,12 @@
             me to meet people from all walks of life and reinforced my interest
             in understanding what helps people overcome adversity and thrive. 
           </p>
+        </div>
+
+        <!-- FULL WIDTH ROW: Drops below the image to fill the empty space (Slides up) -->
+        <div style="grid-column: 1 / -1; margin-top: -1.5rem;" data-aos="fade-up" data-aos-delay="200">
           <hr class="separation" />
-          <p>
+          <p style="font-size: 1.15rem; color: var(--color-text); margin-bottom: 0;">
             Today, I am a qualified Cognitive Behavioural Therapist, having
             completed my CBT Diploma with ACT Counselling Services. I am a
             registered member of both the British Association for Counselling
@@ -178,32 +178,49 @@
         </div>
       </section>
 
-      <!-- Qualifications Section -->
-      <section class="qualifications-section fade-in">
-        <div class="qualifications-box">
-          <h3>Training & Core Competencies</h3>
-          <ul class="qualifications-list">
-            <li>
-              Specialised Support for Anxiety, Depression, Stress & Self-Esteem
-            </li>
-            <li>
-              Evidence-Based CBT Techniques (Cognitive Restructuring,
-              Behavioural Activation & Exposure)
-            </li>
-            <li>Inclusive Therapy for Diverse & Neurodivergent Populations</li>
-            <li>ASIST Suicide Prevention & Crisis Safety Planning</li>
-            <li>Rigorous Safeguarding, Confidentiality & Ethical Practice</li>
-          </ul>
+      <!-- Split Layout: Competencies & Fees -->
+      <section class="about-bottom-section">
+        
+        <!-- LEFT COLUMN: Training & Core Competencies -->
+        <div class="competencies-column" data-aos="fade-up" data-aos-offset="150">
+          <h2>Training & Core Competencies</h2>
+          <p>
+            I provide evidence-based, person-centred psychological therapy, informed by current research and clinical guidance. I support individuals experiencing anxiety disorders, including social anxiety, panic and health anxiety, as well as depression, OCD, phobias, sleep difficulties, low self-esteem and PTSD.
+          </p>
+          <p>
+            My approach draws on CBT techniques such as cognitive restructuring, behavioural activation and exposure, adapted to each person's individual needs and goals. I also offer inclusive, neurodiversity-informed support for people from diverse backgrounds.
+          </p>
+        </div>
+
+        <!-- RIGHT COLUMN: Session Fees -->
+        <div class="fees-column">
+          <h2 style="text-align: center;" data-aos="fade-left">Session Fees</h2>
+          
+          <div class="pricing-grid-small">
+            <!-- Face-to-Face Card -->
+            <div class="pricing-card hover-lift" data-aos="fade-left" data-aos-delay="150">
+              <h3>Face-to-Face</h3>
+              <div class="price-amount">£50</div>
+              <p>50-Minute Session</p>
+            </div>
+
+            <!-- Online Card -->
+            <div class="pricing-card hover-lift" data-aos="fade-left" data-aos-delay="300">
+              <h3>Online</h3>
+              <div class="price-amount">£40</div>
+              <p>50-Minute Session</p>
+            </div>
+          </div>
+
+          <p class="concession-text" data-aos="zoom-in" data-aos-delay="300">
+            Depending on your circumstances, concessionary rates may be available. This can be discussed during our introductory call.
+          </p>
         </div>
       </section>
-
-      <!-- Pricing Section -->
-      
     </section>
 
     <footer class="footer">
       <div class="footer__top">
-        <!-- Column 1: Navigation -->
         <div class="footer__column">
           <h4>Quick Links</h4>
           <ul class="footer__links">
@@ -213,10 +230,10 @@
             <li><a href="services.html">Types of Therapy</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="privacypolicy.html">Privacy Policy</a></li>
+            <li><a href="termsandconditions.html">Terms & Conditions</a></li>
           </ul>
         </div>
 
-        <!-- Column 2: Crisis Support -->
         <div class="footer__column">
           <h4>Need Immediate Help?</h4>
           <p>
@@ -230,7 +247,6 @@
           </ul>
         </div>
 
-        <!-- Column 3: Trust Badge -->
         <div class="footer__column">
           <h4>Professional Affiliation</h4>
           <div class="footer__badge">
@@ -242,7 +258,6 @@
         </div>
       </div>
 
-      <!-- Bottom Bar: Copyright & Credit -->
       <div class="footer__bottom">
         <p>&copy; 2026 Pillars Counselling Services. All rights reserved.</p>
 
@@ -252,11 +267,21 @@
             href="https://github.com/rohank9705"
             target="_blank"
             rel="noopener noreferrer"
-            >Rohan</a
+            >RKHN STUDIO</a
           >
         </div>
       </div>
     </footer>
+
+    <!-- Scripts -->
     <script src="app.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800, 
+        once: true, 
+        offset: 100 
+      });
+    </script>
   </body>
 </html>

@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms and Conditions | Pillars Counselling</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="images/Untitled_design-removebg-preview.png"
+    />
+
+    <style>
+      /* =========================================
+         1. UNIVERSAL MOBILE FIXES (< 768px)
+         ========================================= */
+      @media (max-width: 767px) {
+        body {
+          overflow-x: hidden;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .services-master-layout,
+        .signpost-master-layout,
+        .hero-section {
+          max-width: 92% !important;
+          width: 92% !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          box-sizing: border-box !important;
+        }
+
+        /* --- MOBILE HEADER DESIGN --- */
+        .header {
+          display: flex !important;
+          flex-direction: row !important;
+          justify-content: space-between !important;
+          align-items: center !important;
+          padding: 0.4rem 1.25rem !important;
+          width: 100% !important;
+          box-sizing: border-box !important;
+        }
+
+        .header__logo { margin: 0 !important; display: flex; align-items: center; height: 100%; }
+        .header__logo-img { height: 150px !important; width: auto !important; }
+
+        .header__nav { display: flex; flex-direction: column; align-items: flex-end !important; padding-right: 0.5rem; }
+        .header__nav-list { display: flex; flex-direction: column; align-items: flex-end !important; width: 100%; margin: 0; padding: 0; list-style: none; }
+        .header__nav-item { position: relative !important; width: 100%; text-align: right !important; padding: 0.2rem 0; }
+        .header__nav-link { display: inline-block; text-align: right !important; }
+        
+        .dropdown { display: none !important; }
+        .header__nav-item.active-mobile-dropdown .dropdown {
+          display: flex !important; flex-direction: column !important; align-items: flex-end !important; position: static !important; width: 100% !important; box-shadow: none !important; background: transparent !important; padding: 0 !important; margin: 0.2rem 0 0 0 !important;
+        }
+        .dropdown-content a { text-align: right !important; padding: 0.3rem 0 !important; white-space: normal !important; }
+      }
+
+      /* =========================================
+         2. PLATINUM CARERS INSPIRED POLICY LAYOUT
+         ========================================= */
+      .policy-wrapper {
+        max-width: 900px;
+        margin: 50px auto 80px auto;
+        background-color: #e1e7e1; /* Using your pale sand card color */
+        padding: 60px 80px;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      }
+
+      .policy-wrapper h1 {
+        font-family: 'Montserrat', serif;
+        color: var(--accent-primary, #486658);
+        font-size: 2.5rem;
+        border-bottom: 3px solid var(--accent-secondary, #cfb160);
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+        margin-top: 0;
+      }
+
+      .policy-wrapper h2 {
+        font-family: 'Montserrat', serif;
+        color: var(--accent-primary, #486658);
+        font-size: 1.5rem;
+        margin-top: 40px;
+        margin-bottom: 15px;
+      }
+
+      .policy-wrapper h3 {
+        font-family: 'Montserrat', serif;
+        color: var(--accent-primary, #486658);
+        font-size: 1.15rem;
+        margin-top: 25px;
+        margin-bottom: 10px;
+      }
+
+      .policy-wrapper p {
+        margin-bottom: 20px;
+        color: var(--color-text, #4a4a4a);
+        font-family: 'Lora', serif;
+        line-height: 1.7;
+      }
+
+      .policy-wrapper ul {
+        margin-bottom: 25px;
+        color: var(--color-text, #4a4a4a);
+        padding-left: 20px;
+        font-family: 'Lora', serif;
+        line-height: 1.7;
+      }
+
+      .policy-wrapper li {
+        margin-bottom: 10px;
+      }
+
+      .policy-wrapper strong {
+        color: var(--accent-primary, #486658);
+      }
+
+      .policy-wrapper a {
+        color: var(--accent-primary, #486658);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+        border-bottom: 1px solid transparent;
+      }
+
+      .policy-wrapper a:hover {
+        color: var(--accent-secondary, #cfb160);
+        border-bottom: 1px solid var(--accent-secondary, #cfb160);
+      }
+
+      .meta-info {
+        background-color: var(--bg-page, #FFFFFF);
+        padding: 20px;
+        border-radius: 5px;
+        margin-bottom: 40px;
+        font-size: 0.95rem;
+        color: var(--color-text, #4a4a4a);
+        font-family: 'Inter', sans-serif;
+        border: 1px solid rgba(72, 102, 88, 0.1);
+      }
+
+      .meta-info strong {
+        color: var(--accent-primary, #486658);
+      }
+
+      @media (max-width: 768px) {
+        .policy-wrapper {
+          margin: 20px auto 40px auto;
+          padding: 30px 20px;
+          max-width: 92%;
+        }
+        .policy-wrapper h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- STANDARD PILLARS HEADER -->
+    <header class="header">
+      <div class="header__logo">
+        <a href="index.html">
+          <img
+            src="images/Untitled_design-removebg-preview.png"
+            alt="Pillars Counselling Services Logo"
+            class="header__logo-img"
+          />
+        </a>
+      </div>
+
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a href="index.html" class="header__nav-link">HOME</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="aboutme.html" class="header__nav-link">ABOUT ME</a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link">RESOURCES</a>
+            <div class="dropdown">
+              <div class="dropdown-content">
+                <a href="signposting.html">Useful Links | Signposting</a>
+                <a href="services.html">Types of Therapy</a>
+              </div>
+            </div>
+          </li>
+          <li class="header__nav-item">
+            <a href="contact.html" class="header__nav-link">CONTACT</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- TERMS AND CONDITIONS BODY -->
+    <main class="policy-wrapper">
+      <h1>Terms and Conditions</h1>
+      
+      <div class="meta-info">
+        <strong>Company Name:</strong> Pillars Counselling Services<br>
+        <strong>Last Updated:</strong> 18/08/2026
+      </div>
+
+      <p>Welcome to the Pillars Counselling Services website. By accessing and using this website, you agree to comply with and be bound by these Terms and Conditions. If you do not agree with these terms, please do not use this website.</p>
+      <p>The terms “Pillars Counselling Services,” “we,” “us,” and “our” refer to Pillars Counselling Services. The terms “you” and “your” refer to the person accessing or using this website.</p>
+
+      <h2>1. Website Content and Disclaimer</h2>
+      <ul>
+        <li>The information provided on this website is intended for general information and educational purposes only.</li>
+        <li>We aim to ensure that the information on this website is accurate and helpful; however, content may be updated, amended, or removed without prior notice.</li>
+        <li>The information provided on this website does not constitute medical, psychological, psychiatric, or other professional healthcare advice.</li>
+        <li>Information provided through this website is not intended to provide a diagnosis, assessment, or personalised treatment recommendation.</li>
+        <li>Website content should not be used as a substitute for professional counselling, therapy, medical care, or other appropriate professional support.</li>
+        <li>Accessing or browsing this website does not create a counsellor-client, therapist-client, or other professional relationship between you and Pillars Counselling Services.</li>
+        <li>If you are experiencing a mental health crisis or believe that you or someone else is at immediate risk of harm, you should seek appropriate emergency or crisis support rather than relying on information provided on this website.</li>
+      </ul>
+
+      <h2>2. Counselling Services</h2>
+      <ul>
+        <li>Any counselling or therapeutic services offered by Pillars Counselling Services are subject to separate arrangements, including any applicable client agreement, consent forms, policies, and booking terms.</li>
+        <li>Information displayed on this website about our counselling services is provided for general guidance and does not constitute a guarantee that a particular service, counsellor, appointment, or treatment approach will be available.</li>
+        <li>A counselling relationship is established only when appropriate arrangements have been made between you and Pillars Counselling Services and any required agreements or consent processes have been completed.</li>
+        <li>Counselling is not intended to replace emergency medical or crisis services.</li>
+      </ul>
+
+      <h2>3. Intellectual Property</h2>
+      <ul>
+        <li>Unless otherwise stated, the content and materials on this website are owned by or licensed to Pillars Counselling Services.</li>
+        <li>This may include, but is not limited to, our text, branding, logos, graphics, photographs, website design, layout, visual elements, and other materials.</li>
+        <li>You may view and use the website for your own personal, non-commercial purposes.</li>
+        <li>You must not reproduce, copy, modify, distribute, publish, transmit, sell, or commercially exploit any website content without our prior written permission.</li>
+        <li>Nothing in these Terms and Conditions grants you ownership or rights in any intellectual property belonging to Pillars Counselling Services.</li>
+      </ul>
+
+      <h2>4. External Links</h2>
+      <ul>
+        <li>Our website may contain links to third-party websites, organisations, resources, or support services.</li>
+        <li>These links are provided for convenience and to help you access additional information or support.</li>
+        <li>The inclusion of an external link does not necessarily mean that Pillars Counselling Services endorses, recommends, or is affiliated with the linked organisation or website.</li>
+        <li>We are not responsible for the content, accuracy, security, privacy practices, availability, or operation of third-party websites.</li>
+        <li>Your use of external websites is subject to the terms and policies of those websites.</li>
+      </ul>
+
+      <h2>5. Website Availability and Accuracy</h2>
+      <ul>
+        <li>We make reasonable efforts to keep the information on this website accurate, current, and available.</li>
+        <li>However, we do not guarantee that the website or its content will always be complete, accurate, current, uninterrupted, or free from errors.</li>
+        <li>We may change, suspend, withdraw, or update any part of the website without prior notice.</li>
+        <li>We are not responsible for any loss or inconvenience arising from the temporary or permanent unavailability of the website.</li>
+      </ul>
+
+      <h2>6. Limitation of Liability</h2>
+      <ul>
+        <li>To the fullest extent permitted by law, Pillars Counselling Services will not be liable for any loss, damage, or inconvenience arising from your use of, or reliance upon, information contained on this website.</li>
+        <li>This includes, where legally permitted, any direct, indirect, incidental, or consequential loss arising from the use of the website or inability to access the website.</li>
+        <li>Nothing in these Terms and Conditions is intended to exclude or limit liability where such exclusion or limitation would be unlawful.</li>
+      </ul>
+
+      <h2>7. Privacy</h2>
+      <ul>
+        <li>Any personal information submitted through this website will be handled in accordance with our applicable privacy and data protection policies.</li>
+        <li>You should avoid submitting confidential or sensitive personal information through general website forms unless specifically requested and appropriate safeguards are in place.</li>
+        <li>Please refer to our Privacy Policy for further information about how personal information is collected, used, stored, and protected.</li>
+      </ul>
+
+      <h2>8. Changes to These Terms</h2>
+      <ul>
+        <li>Pillars Counselling Services may update or amend these Terms and Conditions from time to time.</li>
+        <li>Any changes will take effect when the updated Terms and Conditions are published on this website.</li>
+        <li>We encourage you to review this page periodically to ensure that you are aware of any changes.</li>
+      </ul>
+
+      <h2>9. Governing Law</h2>
+      <ul>
+        <li>These Terms and Conditions are governed by and interpreted in accordance with the laws of Scotland.</li>
+        <li>Any dispute arising from or relating to your use of this website shall be subject to the jurisdiction of the Scottish courts, except where applicable law requires otherwise.</li>
+      </ul>
+
+      <h2>10. Contact</h2>
+      <p>If you have any questions about these Terms and Conditions or the use of this website, please contact Pillars Counselling Services through the contact details provided on our website.</p>
+    </main>
+
+    <!-- STANDARD PILLARS FOOTER -->
+    <footer class="footer">
+      <div class="footer__top">
+        <div class="footer__column">
+          <h4>Quick Links</h4>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="signposting.html">Signposting</a></li>
+            <li><a href="services.html">Types of Therapy</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacypolicy.html">Privacy Policy</a></li>
+            <li><a href="termsandconditions.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h4>Need Immediate Help?</h4>
+          <p>
+            If you are in crisis or need urgent support, please reach out to
+            emergency services or a dedicated helpline:
+          </p>
+          <ul class="footer__crisis-list">
+            <li><strong>Emergency:</strong> Call 999</li>
+            <li><strong>NHS 24:</strong> Call 111</li>
+            <li><strong>Samaritans:</strong> Call 116 123</li>
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h4>Professional Affiliation</h4>
+          <div class="footer__badge">
+            <p>
+              Registered Member of the British Association for Counselling and
+              Psychotherapy (BACP)
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 Pillars Counselling Services. All rights reserved.</p>
+        <div class="footer__creator">
+          Designed & Developed by
+          <a
+            href="https://github.com/rohank9705"
+            target="_blank"
+            rel="noopener noreferrer"
+            >RKHN STUDIO</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

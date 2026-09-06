@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Services | Pillars Counselling</title>
+    <title>Pillars Counselling</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,6 +12,7 @@
       rel="stylesheet"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;700;800&display=swap"
@@ -103,11 +104,7 @@
       <nav class="header__nav">
         <ul class="header__nav-list">
           <li class="header__nav-item">
-            <a
-              href="index.html"
-              class="header__nav-link "
-              >HOME</a
-            >
+            <a href="index.html" class="header__nav-link">HOME</a>
           </li>
           <li class="header__nav-item">
             <a href="aboutme.html" class="header__nav-link">ABOUT ME</a>
@@ -230,7 +227,7 @@
         </style>
 
         <!-- LEFT COLUMN: Intro Text -->
-        <div class="services-sidebar">
+        <div class="services-sidebar" data-aos="fade-right" data-aos-delay="100">
           <h1>Types of Therapy</h1>
           <hr class="separation" style="margin: 1.5rem 0" />
           <p>
@@ -243,41 +240,80 @@
             At Pillars Counselling Services, my main therapeutic approach is
             <strong>Cognitive Behavioural Therapy (CBT)</strong>. However, I
             recognise that therapy is personal, and the most suitable approach
-            will depend on your individual needs, preferences, and goals. Below
-            is an overview of some common therapeutic approaches to help you
-            explore the different options available.
+            will depend on your individual needs, preferences, and goals. On
+            this page is an overview of some common therapeutic approaches to
+            help you explore the different options available.
           </p>
         </div>
 
         <!-- RIGHT COLUMN: Therapy Rows -->
         <div class="therapy-grid">
-          <div class="qualifications-box">
+          <div class="qualifications-box" data-aos="fade-left" data-aos-delay="100">
             <h3 style="color: var(--color-charcoal)">
               Cognitive Behavioural Therapy (CBT)
+              <div class="learn_dropdown">
+              <button class="dropbtn" onclick="myFunction()">+</button></div>
             </h3>
-            <p>
-              CBT is commonly used to support difficulties such as anxiety,
-              depression, stress, phobias, obsessive thoughts, and managing the
-              impact of long-term health conditions.
-            </p>
+            <div class="learn_more_dropdown"><p>
+              CBT is a structured, goal-focused approach recommended for
+              anxiety, depression, stress, and more. It explores how our
+              thoughts, feelings, and behaviours influence each other. Therapy
+              helps you recognise unhelpful patterns, develop new perspectives,
+              and learn practical skills to respond to life's challenges in
+              healthier ways. <a
+                href="https://www.counselling-directory.org.uk/cognitive-behavioural-therapy.html"
+                target="_blank"
+                class="read-more"
+                >Read more</a
+              >
+            </p></div>
+            <!-- <p>
+              CBT is a structured, goal-focused approach recommended for
+              anxiety, depression, stress, and more. It explores how our
+              thoughts, feelings, and behaviours influence each other. Therapy
+              helps you recognise unhelpful patterns, develop new perspectives,
+              and learn practical skills to respond to life's challenges in
+              healthier ways. <a
+                href="https://www.counselling-directory.org.uk/cognitive-behavioural-therapy.html"
+                target="_blank"
+                class="read-more"
+                >Read more</a
+              >
+            </p> -->
           </div>
 
-          <div class="qualifications-box">
+          <div class="qualifications-box" data-aos="fade-left" data-aos-delay="250">
             <h3 style="color: var(--color-charcoal)">Person-Centred Therapy</h3>
             <p>
-              Through a genuine, accepting, and supportive therapeutic
-              relationship, this approach provides a space where you can explore
-              your potential, build self-awareness, and work towards becoming a
-              more fulfilled version of yourself.
+              This approach provides a safe, non-judgemental space to explore
+              your experiences at your own pace. Based on the belief that
+              everyone has the capacity for positive change, the therapist
+              offers genuine acceptance and support. Rather than directing
+              outcomes, therapy helps you build self-awareness and become a more
+              fulfilled version of yourself.
+              <a
+                href="https://www.counselling-directory.org.uk/person-centred-therapy.html"
+                target="_blank"
+                class="read-more"
+                >Read more</a
+              >
             </p>
           </div>
 
-          <div class="qualifications-box">
+          <div class="qualifications-box" data-aos="fade-left" data-aos-delay="400">
             <h3 style="color: var(--color-charcoal)">Psychodynamic Therapy</h3>
             <p>
-              Psychodynamic Therapy explores how past experiences,
-              relationships, and deeper emotional patterns may influence the way
-              we experience life in the present.
+              Psychodynamic Therapy explores how past experiences and deeper
+              emotional patterns influence how you experience life today. By
+              looking at both conscious and unconscious processes, therapy helps
+              you make sense of recurring relationship or behavioural patterns,
+              creating opportunities for meaningful change.
+              <a
+                href="https://www.counselling-directory.org.uk/psychodynamic-therapy.html"
+                target="_blank"
+                class="read-more"
+                >Read more</a
+              >
             </p>
           </div>
 
@@ -288,63 +324,71 @@
             </h2>
           </div>
 
-          <div class="qualifications-box">
-            <h3 style="color: var(--color-charcoal)">
-              Pluralistic Counselling
-            </h3>
+          <div class="qualifications-box" data-aos="fade-left" data-aos-delay="200">
+            <h3 style="color: var(--color-charcoal)">Family Therapy</h3>
             <p>
-              Pluralistic Counselling recognises that there is no single
-              approach to therapy that works for everyone. It focuses on working
-              collaboratively with you to understand your individual needs,
-              preferences, and goals.
-            </p>
-            <p>
-              The therapist may draw from different therapeutic approaches and
-              adapt the support provided depending on what feels most helpful
-              for you.
+              Family Therapy offers a supportive, non-judgemental space to
+              explore communication and relationship dynamics within the family
+              system. It helps families navigate conflict, major life changes,
+              or individual challenges together. Sessions are flexible and can
+              involve the whole family, couples, or anyone who plays a
+              significant role in your life. <a href="https://www.counselling-directory.org.uk/family-therapy.html" target="_blank" class="read-more">Read more</a>
             </p>
           </div>
 
-          <div class="qualifications-box">
+          <div class="qualifications-box" data-aos="fade-left" data-aos-delay="250">
             <h3 style="color: var(--color-charcoal)">Humanistic Therapy</h3>
             <p>
-              Humanistic therapy focuses on the individual as a whole and
-              emphasises personal growth, self-development, and reaching your
-              potential.
-            </p>
-            <p>
-              This approach supports individuals in developing self-awareness,
-              recognising their own strengths, and taking responsibility for
-              their choices and personal journey.
+              Humanistic Therapy focuses on the whole person, emphasizing
+              self-awareness, personal growth, and reaching your potential. In a
+              highly accepting and supportive environment, you are encouraged to
+              explore your values and emotions without judgement. This approach
+              empowers you to recognise your strengths and take an active role
+              in shaping your life.
+              <a
+                href="https://www.counselling-directory.org.uk/humanistic.html"
+                target="_blank"
+                class="read-more"
+                >Read more</a
+              >
             </p>
           </div>
 
-          <div class="qualifications-box">
+          <div class="qualifications-box" data-aos="fade-left" data-aos-delay="300">
             <h3 style="color: var(--color-charcoal)">
               Eye Movement Desensitisation and Reprocessing (EMDR)
             </h3>
             <p>
-              EMDR is an approach often used to support individuals who have
-              experienced distressing or traumatic events, particularly those
-              experiencing symptoms associated with post-traumatic stress.
-            </p>
-            <p>
-              EMDR aims to help the brain process difficult memories so that
-              they become less overwhelming and easier to manage.
+              Eye Movement Desensitisation and Reprocessing (EMDR) is highly
+              effective for trauma and PTSD. It is based on the idea that
+              distressing experiences can remain inadequately processed. Using
+              structured procedures like guided eye movements, EMDR helps the
+              brain process these difficult memories, reducing their emotional
+              intensity and disruptiveness.
+              <a
+                href="https://www.counselling-directory.org.uk/emdr.html"
+                target="_blank"
+                class="read-more"
+                >Read more</a
+              >
             </p>
           </div>
 
-          <div class="qualifications-box">
+          <div class="qualifications-box" data-aos="fade-left" data-aos-delay="350">
             <h3 style="color: var(--color-charcoal)">Existential Therapy</h3>
             <p>
-              Existential Therapy explores some of the deeper questions and
-              challenges of life, such as identity, meaning, choice,
-              responsibility, and how we find purpose.
-            </p>
-            <p>
-              This approach can support individuals in exploring their values,
-              making meaningful decisions, and developing a greater
-              understanding of their own life journey.
+              Drawing on philosophy and psychology, this approach explores deep
+              human challenges like identity, meaning, choice, and purpose.
+              Rather than simply removing symptoms, Existential Therapy helps
+              you explore what truly matters to you and how you want to live. It
+              is especially helpful during periods of transition, uncertainty,
+              or deep questioning.
+              <a
+                href="https://www.counselling-directory.org.uk/existential-therapy.html"
+                target="_blank"
+                class="read-more"
+                >Read more</a
+              >
             </p>
           </div>
         </div>
@@ -363,6 +407,7 @@
             <li><a href="services.html">Types of Therapy</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="privacypolicy.html">Privacy Policy</a></li>
+            <li><a href="termsandconditions.html">Terms & Conditions</a></li>
           </ul>
         </div>
 
@@ -402,12 +447,20 @@
             href="https://github.com/rohank9705"
             target="_blank"
             rel="noopener noreferrer"
-            >Rohan</a
+            >RKHN STUDIO</a
           >
         </div>
       </div>
     </footer>
 
     <script src="app.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800 /* Controls how long the animation takes (in milliseconds) */,
+        once: true /* Ensures the animation only plays once as you scroll down */,
+        offset: 100 /* The distance in pixels the element must be in the viewport to trigger */,
+      });
+    </script>
   </body>
 </html>
