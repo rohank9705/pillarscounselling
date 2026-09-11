@@ -2,27 +2,6 @@
    1. CSS Variables (Premium Beige & Gold)
    ========================================= */
 :root {
-  /* Core Canvas Colors */
-  /* --bg-page: #f9f4e9;         A very soft, warm beige/ivory */
-  /* --bg-surface: #ffffff;      Slightly deeper beige for header/footer contrast */
-
-  /* Typography Colors */
-  /* --color-text: #726d65;      Warm charcoal for highly readable body text */
-  /* --color-heading: #2D2A26;   Rich, dark espresso for headings (Premium feel) */
-
-  /* The Gold & Pastels */
-  /* --accent-gold: #cfb160;     /* Muted, elegant champagne gold */
-  /* --accent-blue: #7FB3D5;     Maintained pastel blue */
-  /* --accent-rose: #E2A6A6;     Maintained pastel rose */
-  /* --accent-green: #AEC6A6;    Maintained pastel green */
-
-  /* Replace var(--accent-gold) with var(--accent-primary)
-
-  Replace var(--border-gold) with var(--border-primary)
-
-  Replace var(--accent-blue) with var(--accent-secondary) 
-
-  do the inverse to change it back to the goldish theme*/
 
   /* Active Theme: Green & Gold */
   --bg-page: #ffffff; /* Main crisp white background */
@@ -300,7 +279,7 @@ h4 {
   width: 100% !important; /* Forces the line to expand and become visible */
   display: block !important;
   border: none !important; 
-  border-top: 1px solid var(--accent-secondary) !important; 
+  border-top: 1px solid var(--accent-tertiary) !important; 
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -866,25 +845,28 @@ button[type="submit"]:hover {
 /* =========================================
    Custom Scrollbar
    ========================================= */
-/* The width of the entire scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #c0c4c9 #f9fafb; /* thumb color | track color */
+}
+
+/* Chrome, Edge, and Safari Support */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 12px; /* Width of the vertical scrollbar */
 }
 
-/* The track (background) of the scrollbar */
 ::-webkit-scrollbar-track {
-  background: var(--bg-surface);
+  background: #f9fafb; /* A very soft, off-white track */
 }
 
-/* The draggable thumb */
 ::-webkit-scrollbar-thumb {
-  background: rgba(163, 134, 54, 0.4); /* Faint gold */
-  border-radius: 10px;
+  background-color: #c0c4c9; /* The silver draggable handle */
+  border-radius: 10px;       /* Soft rounded edges */
+  border: 3px solid #f9fafb; /* Matches the track color to create a padded "floating" effect */
 }
 
-/* The thumb when you hover/click it */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(163, 134, 54, 0.7); /* Darker gold */
+  background-color: #a3a8af; /* Slightly darker silver when the user hovers over it */
 }
 
 /* =========================================
@@ -1374,4 +1356,69 @@ button[type="submit"]:hover {
   .pricing-grid-small {
     grid-template-columns: 1fr; /* Stacks the pricing cards on very small phones */
   }
+}
+
+/* Dropdown Base State (Hidden) */
+.learn_more_dropdown {
+  display: none;
+  margin-top: 1rem; 
+}
+
+/* Dropdown Active State (Visible) */
+.learn_more_dropdown.show {
+  display: block;
+  animation: fadeIn 0.3s ease-in; /* Optional: adds a quick fade effect */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* The Premium Silver Plus Box */
+.dropbtn {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Muted Pale Gold styling */
+  background: linear-gradient(to bottom, #fdfcf7, #f0e8d1); 
+  border: 1px solid #e3d7b8;
+  border-radius: 6px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04); 
+  
+  /* Typography & alignment */
+  color: var(--color-charcoal, #374151); 
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+  
+  /* Smooth animations */
+  transition: all 0.2s ease;
+}
+
+/* Hover & Active Effects */
+.dropbtn:hover {
+  background: linear-gradient(to bottom, #f8f4e6, #e6d8b3); 
+  border-color: #d1c196;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.dropbtn:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+/* Flawless vertical alignment */
+.dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
 }

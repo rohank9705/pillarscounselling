@@ -90,20 +90,42 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
+document.addEventListener("DOMContentLoaded", function () {
+  const dropButtons = document.querySelectorAll('.dropbtn');
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
+  dropButtons.forEach(button => {
+    button.addEventListener('click', function () {
+      // 1. Find the <h3> that wraps this specific button
+      const parentHeading = this.closest('h3');
+      
+      // 2. Find the dropdown content directly after this <h3>
+      const dropdownContent = parentHeading.nextElementSibling;
+      
+      // 3. Toggle the visibility class
+      dropdownContent.classList.toggle('show');
+      
+      // 4. Swap the + and - symbol
+      if (dropdownContent.classList.contains('show')) {
+        this.innerText = '-';
+      } else {
+        this.innerText = '+';
       }
-    }
-  }
+    });
+  });
+});
+
+// ==========================================
+// INITIALIZE LENIS SMOOTH SCROLLING
+// ==========================================
+const lenis = new Lenis({
+  duration: 1.8, // Controls the smoothness/speed
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  smooth: true
+});
+
+// Sync Lenis with the browser's native refresh rate
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
 }
+requestAnimationFrame(raf);
