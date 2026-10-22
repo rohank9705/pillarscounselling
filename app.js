@@ -95,21 +95,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   dropButtons.forEach(button => {
     button.addEventListener('click', function () {
-      // 1. Find the <h3> that wraps this specific button
       const parentHeading = this.closest('h3');
-      
-      // 2. Find the dropdown content directly after this <h3>
       const dropdownContent = parentHeading.nextElementSibling;
       
-      // 3. Toggle the visibility class
+      // Toggles the text visibility
       dropdownContent.classList.toggle('show');
       
-      // 4. Swap the + and - symbol
-      if (dropdownContent.classList.contains('show')) {
-        this.innerText = '-';
-      } else {
-        this.innerText = '+';
-      }
+      // Toggles the rotation of the chevron (no text swapping!)
+      this.classList.toggle('open');
     });
   });
 });

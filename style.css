@@ -502,6 +502,16 @@ h4 {
   .hero__image-wrapper {
     min-height: 300px;
   }
+  
+  /* NEW: Tightens the list on phones so it doesn't break to a new line */
+  .header-title__list {
+    gap: 0.8rem;
+  }
+  
+  .header-title__list li {
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+  }
 }
 
 
@@ -1018,6 +1028,7 @@ h4 {
   margin-bottom: 0.5rem;
 }
 
+/* The Naked Chevron Button */
 .dropbtn {
   display: inline-flex;
   justify-content: center;
@@ -1025,29 +1036,32 @@ h4 {
   width: 36px;
   height: 36px;
   padding: 0;
-  font-family: var(--font-ui);
-  font-size: 1.3rem;
-  font-weight: 500;
-  line-height: 1;
-  color: #374151;
-  background: linear-gradient(to bottom, #fdfcf7, #f0e8d1);   /* pale gold */
-  border: 1px solid #e3d7b8;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+  color: var(--accent-primary, #486658); 
+  background: transparent; 
+  border: none;           
+  box-shadow: none;        
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .dropbtn:hover {
-  background: linear-gradient(to bottom, #f8f4e6, #e6d8b3);
-  border-color: #d1c196;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-  transform: translateY(-1px);
+  background: transparent;
+  color: var(--color-heading, #364d42); /* Slightly darker on hover */
+  transform: translateY(-2px); /* Subtle hover lift */
 }
 
 .dropbtn:active {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
-  transform: translateY(1px);
+  transform: translateY(0);
+}
+
+/* Chevron Base State */
+.chevron-icon {
+  transition: transform 0.3s ease;
+}
+
+/* Chevron Open State (Flipped) */
+.dropbtn.open .chevron-icon {
+  transform: rotate(180deg);
 }
 
 .learn_more_dropdown {
